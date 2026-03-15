@@ -1,0 +1,706 @@
+Age,Gender,Academic_Level,Country,Avg_Daily_Usage_Hours,Most_Used_Platform,Affects_Academic_Performance,Sleep_Hours_Per_Night,Mental_Health_Score,Relationship_Status,Conflicts_Over_Social_Media,Addicted_Score,Status
+17,Male,Graduate,Australia,3.21,Facebook,No,6.0,5,Single,6,17,0
+24,Male,Graduate,Canada,6.51,Twitter,Yes,4.0,2,Single,4,28,1
+22,Male,Undergraduate,Germany,5.73,WhatsApp,No,7.0,6,Complicated,8,16,0
+25,Male,Graduate,India,1.82,Facebook,No,8.0,8,In Relationship,1,14,0
+21,Female,High School,Australia,6.41,Twitter,Yes,4.0,2,In Relationship,9,24,1
+20,Male,High School,Other,7.63,TikTok,Yes,4.0,1,Complicated,10,27,1
+17,Male,High School,UK,5.89,WhatsApp,Yes,6.0,5,In Relationship,3,23,1
+17,Female,Graduate,Germany,2.28,YouTube,No,8.0,5,Complicated,7,17,0
+24,Male,High School,Germany,6.84,Snapchat,Yes,6.0,2,Single,10,24,1
+17,Male,High School,Nigeria,8.13,Facebook,Yes,3.0,1,Single,4,28,1
+21,Male,Graduate,Japan,3.11,Facebook,No,7.0,8,Complicated,1,7,0
+20,Female,High School,Japan,2.43,Snapchat,Yes,6.0,3,Complicated,9,21,1
+21,Female,Undergraduate,Nigeria,7.55,Instagram,Yes,5.0,5,Single,4,19,1
+23,Male,High School,Japan,7.35,Instagram,Yes,5.0,3,In Relationship,9,26,1
+24,Female,High School,Canada,3.58,Instagram,No,8.0,6,Complicated,5,16,0
+16,Male,High School,India,5.67,Twitter,Yes,7.0,4,Complicated,4,19,1
+22,Female,Undergraduate,Canada,6.19,TikTok,Yes,6.0,2,Complicated,7,26,1
+18,Female,High School,Canada,4.09,Facebook,Yes,7.0,5,In Relationship,4,23,1
+18,Female,High School,India,6.7,Facebook,Yes,5.0,2,Single,8,26,1
+18,Female,High School,Nigeria,5.36,YouTube,No,5.0,6,Complicated,5,15,0
+22,Male,High School,Australia,4.05,WhatsApp,No,7.0,7,Complicated,5,12,0
+18,Male,High School,UK,7.67,Instagram,Yes,5.0,3,In Relationship,6,24,1
+19,Male,Graduate,Canada,4.29,TikTok,Yes,6.0,3,Single,7,21,1
+18,Female,High School,India,5.68,TikTok,Yes,7.0,3,In Relationship,3,22,1
+22,Male,Graduate,Japan,6.31,Twitter,Yes,5.0,4,In Relationship,5,26,1
+19,Female,Graduate,Brazil,6.24,Facebook,Yes,5.0,2,Complicated,6,27,1
+24,Female,Graduate,UK,6.11,TikTok,Yes,5.0,5,Single,10,23,1
+22,Male,Graduate,Brazil,4.96,Facebook,No,7.0,8,In Relationship,0,12,0
+24,Male,High School,Nigeria,2.43,YouTube,Yes,8.0,3,In Relationship,10,27,1
+18,Female,Undergraduate,Australia,6.76,WhatsApp,Yes,6.0,1,Single,5,28,1
+19,Female,Graduate,UK,6.44,Instagram,Yes,5.0,1,In Relationship,7,30,1
+22,Female,Graduate,Japan,7.1,Facebook,Yes,6.0,4,Single,9,26,1
+25,Male,High School,Brazil,2.45,YouTube,No,7.0,6,In Relationship,9,15,0
+20,Female,Undergraduate,India,4.79,Twitter,No,5.0,6,Single,0,13,0
+25,Male,High School,UK,4.81,Instagram,Yes,7.0,6,Complicated,4,19,1
+18,Female,High School,Other,1.68,TikTok,Yes,9.0,5,Single,4,21,1
+20,Male,Graduate,USA,3.93,YouTube,No,7.0,5,In Relationship,8,17,0
+23,Male,Undergraduate,UK,6.64,Twitter,Yes,4.0,1,Complicated,9,30,1
+21,Male,Undergraduate,Germany,2.77,Facebook,Yes,8.0,4,Complicated,6,20,1
+17,Male,Graduate,Brazil,4.92,WhatsApp,No,6.0,5,In Relationship,6,16,0
+20,Female,Undergraduate,Japan,5.22,YouTube,Yes,6.0,3,Single,6,21,1
+21,Male,Graduate,Japan,8.16,Twitter,Yes,3.0,3,Single,5,24,1
+20,Male,High School,Japan,3.54,Facebook,No,7.0,5,In Relationship,5,18,0
+16,Female,Undergraduate,India,7.25,YouTube,Yes,6.0,4,In Relationship,10,21,1
+20,Female,Undergraduate,Other,5.85,Snapchat,No,5.0,7,Complicated,0,11,0
+18,Male,Undergraduate,Nigeria,6.33,YouTube,Yes,6.0,2,Complicated,5,24,1
+20,Male,High School,USA,2.66,TikTok,Yes,8.0,4,Complicated,9,22,1
+20,Female,Undergraduate,India,5.69,YouTube,No,7.0,7,Complicated,3,15,0
+20,Male,High School,Nigeria,5.13,YouTube,Yes,6.0,5,In Relationship,8,19,1
+21,Male,High School,Germany,4.38,YouTube,No,6.0,5,In Relationship,4,18,0
+22,Male,Graduate,Japan,4.73,Instagram,Yes,5.0,3,In Relationship,5,23,1
+20,Female,Graduate,Nigeria,2.35,Twitter,No,8.0,5,Single,6,18,0
+17,Female,High School,UK,4.99,Twitter,Yes,5.0,4,Complicated,5,23,1
+22,Male,Graduate,Japan,6.72,Facebook,Yes,6.0,2,In Relationship,8,27,1
+24,Female,Undergraduate,Germany,7.59,Twitter,Yes,4.0,2,Complicated,8,26,1
+17,Female,High School,Japan,7.87,Instagram,Yes,6.0,4,In Relationship,3,25,1
+25,Male,High School,Australia,8.48,Twitter,Yes,4.0,4,In Relationship,5,22,1
+19,Female,Graduate,UK,2.69,Instagram,Yes,6.0,2,In Relationship,7,25,1
+23,Female,Graduate,USA,7.79,YouTube,Yes,5.0,3,Single,6,26,1
+22,Female,Graduate,Australia,8.45,TikTok,Yes,5.0,4,Complicated,5,22,1
+17,Male,Undergraduate,Nigeria,1.73,TikTok,No,7.0,5,Complicated,8,15,0
+24,Female,High School,Australia,7.9,YouTube,Yes,5.0,5,Single,10,23,1
+21,Female,Graduate,Brazil,7.26,TikTok,Yes,4.0,2,Single,3,24,1
+20,Female,High School,India,3.14,Snapchat,Yes,8.0,5,Complicated,5,22,1
+22,Male,Undergraduate,Other,4.36,TikTok,No,6.0,5,Complicated,8,16,0
+24,Female,High School,Brazil,3.43,Instagram,No,7.0,6,Single,4,14,0
+19,Male,Graduate,Canada,5.6,WhatsApp,No,5.0,5,Complicated,7,16,0
+18,Male,Graduate,USA,2.42,TikTok,No,6.0,5,Complicated,9,16,0
+24,Male,Graduate,India,4.83,WhatsApp,Yes,5.0,5,Single,7,23,1
+23,Male,High School,Nigeria,7.43,YouTube,Yes,6.0,5,In Relationship,10,23,1
+24,Female,High School,India,7.47,Twitter,Yes,5.0,2,Complicated,7,27,1
+21,Male,Graduate,Nigeria,1.97,WhatsApp,No,9.0,6,Complicated,4,12,0
+24,Female,Graduate,India,4.38,WhatsApp,Yes,5.0,6,Complicated,6,19,1
+18,Female,High School,India,3.95,Snapchat,No,8.0,6,Complicated,3,18,0
+25,Female,High School,UK,3.41,WhatsApp,No,8.0,8,In Relationship,0,14,0
+18,Male,High School,Japan,3.01,YouTube,No,8.0,6,Single,3,18,0
+18,Male,Graduate,USA,6.22,TikTok,Yes,5.0,2,Complicated,10,30,1
+24,Female,High School,Canada,4.27,Snapchat,No,6.0,8,In Relationship,0,11,0
+16,Female,Graduate,Brazil,2.73,YouTube,Yes,7.0,5,Single,9,21,1
+16,Female,High School,Germany,5.53,Snapchat,No,6.0,5,Complicated,10,17,0
+21,Male,Undergraduate,India,3.2,Snapchat,Yes,6.0,5,Single,4,20,1
+24,Male,Graduate,Japan,2.86,WhatsApp,No,7.0,6,Single,4,13,0
+18,Male,High School,Nigeria,4.75,Snapchat,Yes,5.0,3,Single,10,25,1
+23,Female,Undergraduate,Other,1.89,Snapchat,No,8.0,7,Single,5,14,0
+17,Female,Undergraduate,Other,5.38,WhatsApp,Yes,6.0,6,Single,3,20,1
+23,Male,Undergraduate,India,5.03,Facebook,Yes,7.0,3,In Relationship,8,21,1
+20,Female,Undergraduate,Germany,6.25,Instagram,Yes,5.0,3,Complicated,9,25,1
+18,Male,Undergraduate,Japan,4.14,WhatsApp,Yes,6.0,4,In Relationship,7,20,1
+18,Male,Undergraduate,Nigeria,2.84,Facebook,No,8.0,7,Single,8,17,0
+25,Male,Graduate,Brazil,2.58,Facebook,Yes,8.0,6,Single,10,19,1
+25,Female,Graduate,Nigeria,3.14,Facebook,Yes,7.0,4,In Relationship,9,21,1
+18,Male,Graduate,UK,7.61,Instagram,Yes,5.0,2,Single,10,24,1
+21,Male,Undergraduate,USA,4.28,TikTok,No,6.0,6,Complicated,5,13,0
+21,Male,High School,USA,3.51,WhatsApp,Yes,6.0,4,In Relationship,6,20,1
+18,Female,High School,Australia,3.16,Instagram,No,6.0,6,Complicated,3,17,0
+24,Male,Graduate,UK,3.54,Instagram,Yes,8.0,5,Single,8,21,1
+17,Male,Undergraduate,Nigeria,1.8,YouTube,No,7.0,8,Complicated,5,14,0
+17,Female,High School,USA,3.97,TikTok,No,8.0,6,Single,7,15,0
+19,Male,High School,USA,3.71,TikTok,Yes,8.0,3,In Relationship,8,22,1
+16,Female,Undergraduate,India,7.1,YouTube,Yes,5.0,3,Single,7,28,1
+21,Male,High School,Germany,6.13,TikTok,Yes,4.0,3,Complicated,9,28,1
+21,Male,High School,UK,7.44,Twitter,Yes,5.0,4,Single,5,22,1
+24,Female,Undergraduate,Germany,6.05,Facebook,Yes,6.0,3,Single,4,24,1
+18,Male,Undergraduate,UK,7.79,YouTube,Yes,4.0,2,Single,6,24,1
+23,Male,Undergraduate,Japan,5.51,YouTube,No,6.0,7,Complicated,10,17,0
+24,Female,Undergraduate,Other,2.02,TikTok,Yes,8.0,6,Complicated,5,19,1
+18,Female,Graduate,USA,7.32,Snapchat,Yes,4.0,4,In Relationship,4,24,1
+24,Male,Graduate,Other,2.58,Twitter,Yes,6.0,4,Complicated,7,20,1
+19,Female,Graduate,USA,4.99,Twitter,Yes,6.0,4,Single,3,21,1
+18,Female,Undergraduate,Nigeria,4.75,TikTok,Yes,5.0,5,Complicated,4,20,1
+21,Male,Undergraduate,India,3.37,Facebook,No,7.0,5,Single,8,16,0
+25,Female,High School,UK,4.99,Snapchat,No,6.0,7,In Relationship,6,17,0
+19,Female,High School,USA,3.47,Snapchat,No,6.0,5,Complicated,8,18,0
+22,Female,High School,Brazil,1.86,Snapchat,No,9.0,5,Complicated,7,18,0
+25,Male,High School,India,4.26,WhatsApp,Yes,7.0,5,Complicated,3,20,1
+16,Male,High School,Germany,7.13,Snapchat,Yes,6.0,3,In Relationship,10,27,1
+16,Female,Undergraduate,India,8.36,Snapchat,Yes,5.0,2,Single,4,26,1
+19,Male,Undergraduate,Germany,4.43,YouTube,Yes,7.0,3,Complicated,6,21,1
+24,Female,Graduate,Nigeria,5.18,TikTok,Yes,7.0,5,Complicated,7,22,1
+25,Female,High School,Canada,3.45,TikTok,No,7.0,6,Complicated,7,17,0
+20,Male,Graduate,Japan,4.16,YouTube,No,6.0,7,Complicated,2,13,0
+23,Male,High School,Japan,3.4,Snapchat,No,6.0,4,Complicated,6,18,0
+19,Male,High School,Brazil,3.81,YouTube,No,8.0,6,In Relationship,6,15,0
+20,Female,Undergraduate,USA,7.86,Instagram,Yes,4.0,2,In Relationship,4,24,1
+21,Female,Undergraduate,Japan,5.17,Facebook,No,5.0,6,In Relationship,7,18,0
+18,Male,Graduate,Germany,7.04,Snapchat,Yes,5.0,2,Single,3,27,1
+20,Female,High School,Nigeria,6.78,TikTok,Yes,5.0,4,Complicated,7,26,1
+17,Female,Undergraduate,Other,3.05,Facebook,Yes,8.0,5,In Relationship,6,22,1
+19,Male,Graduate,Nigeria,5.2,TikTok,No,5.0,6,Complicated,5,18,0
+18,Female,Graduate,Nigeria,2.31,Facebook,Yes,7.0,4,Complicated,9,20,1
+23,Male,Graduate,Nigeria,6.21,TikTok,Yes,4.0,4,Single,7,23,1
+22,Male,High School,Brazil,4.12,YouTube,Yes,7.0,5,Single,5,20,1
+24,Female,Graduate,UK,6.6,Facebook,Yes,5.0,2,Complicated,4,24,1
+16,Female,Graduate,USA,3.18,Instagram,No,6.0,7,Single,9,17,0
+23,Male,Graduate,Canada,6.78,WhatsApp,Yes,5.0,3,In Relationship,3,25,1
+24,Male,Graduate,Brazil,5.39,Instagram,Yes,5.0,4,In Relationship,5,23,1
+24,Female,High School,Canada,3.61,Twitter,Yes,8.0,6,Single,9,20,1
+19,Female,High School,Germany,6.03,YouTube,Yes,4.0,4,In Relationship,3,22,1
+19,Male,Graduate,India,6.73,WhatsApp,Yes,5.0,2,Complicated,10,27,1
+23,Male,Graduate,Nigeria,6.83,TikTok,Yes,4.0,2,In Relationship,6,24,1
+22,Male,Undergraduate,Japan,6.08,Twitter,Yes,6.0,1,Single,3,27,1
+16,Female,High School,Canada,1.98,Facebook,No,9.0,7,Complicated,10,16,0
+23,Male,High School,Japan,5.36,Instagram,No,7.0,6,Complicated,9,18,0
+18,Male,High School,Japan,2.54,Facebook,Yes,6.0,4,In Relationship,10,23,1
+25,Male,Graduate,Canada,3.6,WhatsApp,No,8.0,6,Single,3,15,0
+18,Male,Undergraduate,Brazil,6.01,TikTok,Yes,4.0,4,Single,6,22,1
+25,Male,Graduate,Brazil,8.0,TikTok,Yes,3.0,2,Single,4,27,1
+21,Female,Undergraduate,USA,5.94,WhatsApp,Yes,6.0,3,Complicated,9,22,1
+17,Female,High School,India,2.07,Facebook,No,6.0,5,In Relationship,10,17,0
+21,Female,High School,UK,2.11,YouTube,Yes,6.0,2,In Relationship,4,24,1
+25,Female,Undergraduate,USA,3.54,YouTube,Yes,8.0,5,Single,5,20,1
+20,Female,Undergraduate,Nigeria,2.52,Facebook,Yes,7.0,5,Single,10,19,1
+25,Male,Undergraduate,India,2.45,Instagram,Yes,7.0,4,Complicated,5,23,1
+20,Female,Graduate,Canada,4.85,Facebook,Yes,6.0,4,In Relationship,9,21,1
+21,Male,Graduate,Canada,5.65,Snapchat,No,6.0,6,Single,9,18,0
+23,Male,Graduate,Australia,3.19,Twitter,Yes,7.0,6,In Relationship,9,20,1
+24,Male,Undergraduate,Japan,5.66,Instagram,No,7.0,8,Complicated,5,14,0
+22,Female,Undergraduate,India,1.57,TikTok,Yes,7.0,2,In Relationship,9,27,1
+23,Male,Undergraduate,USA,4.88,TikTok,No,6.0,7,Single,4,14,0
+23,Female,Undergraduate,India,4.57,Twitter,No,5.0,7,Complicated,0,13,0
+18,Male,Graduate,UK,5.36,TikTok,Yes,5.0,5,Complicated,9,21,1
+22,Male,Graduate,Other,7.68,YouTube,Yes,4.0,3,Single,7,25,1
+23,Female,Graduate,Brazil,5.78,Snapchat,No,7.0,6,In Relationship,4,18,0
+18,Female,High School,Canada,3.64,Facebook,Yes,6.0,5,In Relationship,9,23,1
+18,Female,Graduate,Japan,6.35,Twitter,Yes,5.0,2,Single,9,25,1
+24,Female,Undergraduate,Nigeria,4.41,WhatsApp,No,5.0,6,Single,7,17,0
+19,Female,High School,Nigeria,5.46,WhatsApp,Yes,6.0,5,In Relationship,3,21,1
+23,Male,Undergraduate,India,6.65,Twitter,Yes,6.0,4,Complicated,9,24,1
+18,Male,High School,Canada,7.14,Snapchat,Yes,5.0,1,In Relationship,5,28,1
+18,Male,High School,Germany,7.3,WhatsApp,Yes,6.0,2,In Relationship,10,28,1
+21,Male,Graduate,India,6.62,YouTube,Yes,6.0,4,Single,10,26,1
+21,Male,High School,India,5.88,WhatsApp,No,5.0,6,Single,5,16,0
+20,Male,Undergraduate,India,6.08,TikTok,Yes,5.0,3,Single,6,21,1
+24,Female,High School,USA,6.37,WhatsApp,Yes,5.0,3,In Relationship,5,23,1
+18,Male,Graduate,Other,1.56,Twitter,No,9.0,7,In Relationship,6,17,0
+17,Male,High School,India,5.63,YouTube,No,7.0,5,Single,7,17,0
+16,Female,High School,Japan,5.75,Facebook,No,5.0,4,In Relationship,4,18,0
+24,Male,Undergraduate,Germany,2.42,WhatsApp,Yes,6.0,3,Complicated,4,23,1
+16,Female,High School,USA,7.96,WhatsApp,Yes,4.0,3,Single,5,29,1
+24,Female,Undergraduate,Other,5.94,WhatsApp,No,5.0,7,Single,3,13,0
+25,Male,Undergraduate,UK,2.34,Twitter,No,8.0,7,In Relationship,5,17,0
+21,Male,Graduate,Australia,6.63,Instagram,Yes,5.0,4,Single,8,24,1
+18,Female,High School,Other,6.22,Instagram,Yes,4.0,6,Complicated,9,19,1
+19,Female,High School,Brazil,7.91,TikTok,Yes,5.0,4,In Relationship,8,23,1
+17,Female,High School,Germany,2.9,Snapchat,Yes,7.0,3,Complicated,6,22,1
+18,Male,Undergraduate,USA,3.13,TikTok,No,6.0,8,Single,3,13,0
+23,Male,High School,Australia,2.15,Facebook,Yes,6.0,5,Single,9,22,1
+17,Male,Undergraduate,UK,3.16,TikTok,Yes,6.0,4,Single,5,20,1
+25,Male,High School,India,2.65,YouTube,No,7.0,5,In Relationship,7,18,0
+17,Male,High School,Australia,7.28,Twitter,Yes,4.0,3,In Relationship,10,23,1
+24,Male,High School,Nigeria,2.21,WhatsApp,No,6.0,8,In Relationship,5,9,0
+17,Female,High School,USA,8.48,Facebook,Yes,3.0,4,Complicated,9,21,1
+18,Female,High School,UK,3.42,YouTube,Yes,8.0,5,In Relationship,9,20,1
+24,Female,High School,India,3.46,Facebook,Yes,7.0,6,In Relationship,10,19,1
+24,Female,Undergraduate,Other,5.02,YouTube,No,5.0,6,Single,10,16,0
+24,Female,Graduate,Canada,8.32,Instagram,Yes,5.0,5,In Relationship,3,23,1
+21,Male,Graduate,Canada,7.36,WhatsApp,Yes,4.0,3,Complicated,6,25,1
+18,Female,Graduate,UK,7.93,WhatsApp,Yes,5.0,4,In Relationship,5,21,1
+18,Female,Graduate,Nigeria,6.04,Facebook,Yes,6.0,4,In Relationship,3,26,1
+18,Female,Graduate,Canada,5.98,Instagram,No,6.0,5,Complicated,4,15,0
+21,Female,High School,Australia,2.97,Twitter,No,7.0,8,Complicated,3,10,0
+18,Female,Undergraduate,Brazil,3.96,YouTube,No,6.0,4,In Relationship,3,18,0
+21,Female,High School,India,3.89,YouTube,No,8.0,6,Complicated,3,17,0
+22,Male,Graduate,Brazil,2.6,Instagram,Yes,7.0,5,In Relationship,7,21,1
+19,Male,High School,Brazil,5.5,WhatsApp,No,5.0,6,Complicated,10,15,0
+19,Male,High School,Canada,2.7,TikTok,No,7.0,7,In Relationship,4,17,0
+24,Female,High School,Germany,7.7,TikTok,Yes,4.0,4,In Relationship,9,26,1
+25,Male,Graduate,USA,7.39,WhatsApp,Yes,4.0,2,Single,5,28,1
+19,Male,High School,USA,4.46,Twitter,Yes,7.0,4,Single,9,19,1
+24,Female,Graduate,Germany,7.5,Snapchat,Yes,6.0,1,In Relationship,8,28,1
+22,Female,Undergraduate,Nigeria,5.5,YouTube,No,7.0,7,Complicated,9,17,0
+16,Female,Undergraduate,Canada,1.85,YouTube,No,8.0,6,Complicated,4,16,0
+19,Male,Undergraduate,Nigeria,6.92,TikTok,Yes,4.0,3,Complicated,9,25,1
+18,Male,High School,Canada,7.63,Facebook,Yes,6.0,3,Single,8,21,1
+23,Female,High School,Nigeria,5.61,TikTok,No,6.0,6,Single,4,13,0
+19,Male,Graduate,Canada,6.24,TikTok,Yes,5.0,3,In Relationship,10,24,1
+20,Male,Undergraduate,Australia,6.24,WhatsApp,Yes,5.0,3,Complicated,8,25,1
+20,Female,Graduate,Australia,2.82,Snapchat,No,8.0,5,Complicated,10,17,0
+20,Female,Undergraduate,Brazil,4.22,Instagram,Yes,7.0,4,Complicated,8,22,1
+24,Female,High School,Japan,2.77,Instagram,Yes,8.0,4,Single,8,19,1
+19,Female,Undergraduate,Germany,4.1,Snapchat,No,7.0,6,Single,10,18,0
+19,Male,Graduate,Brazil,5.21,YouTube,No,7.0,7,Single,2,14,0
+18,Male,Undergraduate,Germany,5.92,Facebook,No,5.0,8,Single,3,14,0
+17,Male,Graduate,Brazil,5.93,YouTube,Yes,5.0,6,In Relationship,3,19,1
+21,Male,High School,USA,5.89,Facebook,No,7.0,7,In Relationship,5,15,0
+17,Male,Undergraduate,Australia,4.69,Snapchat,Yes,6.0,4,Single,5,22,1
+22,Male,High School,Canada,6.59,Facebook,Yes,6.0,3,Complicated,3,21,1
+16,Male,Undergraduate,Nigeria,4.16,Snapchat,No,6.0,7,Single,7,15,0
+25,Male,Undergraduate,India,5.08,Snapchat,No,7.0,6,In Relationship,4,12,0
+19,Female,Graduate,Brazil,3.57,Instagram,Yes,6.0,4,Complicated,4,20,1
+17,Female,High School,India,6.96,Instagram,Yes,5.0,4,In Relationship,9,24,1
+17,Male,High School,USA,7.46,Twitter,Yes,5.0,2,In Relationship,9,28,1
+23,Female,Graduate,UK,2.29,Twitter,No,8.0,7,In Relationship,5,17,0
+25,Female,Undergraduate,Other,1.7,Twitter,Yes,7.0,4,In Relationship,8,19,1
+16,Male,Graduate,Germany,5.13,Twitter,Yes,7.0,6,Complicated,9,19,1
+18,Male,High School,UK,5.04,YouTube,No,6.0,6,Single,6,16,0
+24,Female,Undergraduate,Canada,2.05,YouTube,Yes,6.0,4,Complicated,3,21,1
+17,Female,Undergraduate,USA,5.4,Instagram,Yes,5.0,4,Complicated,10,24,1
+21,Female,High School,Canada,7.41,TikTok,Yes,6.0,1,Complicated,8,30,1
+17,Male,High School,Nigeria,2.48,Twitter,No,6.0,6,Single,10,17,0
+19,Female,High School,Brazil,1.83,Twitter,Yes,7.0,3,Single,3,24,1
+24,Female,Graduate,Nigeria,7.97,WhatsApp,Yes,5.0,3,In Relationship,5,24,1
+18,Female,Graduate,Japan,3.59,Twitter,Yes,8.0,6,In Relationship,8,19,1
+18,Male,Graduate,Japan,6.36,TikTok,Yes,5.0,1,Single,3,28,1
+19,Female,High School,Australia,6.28,Facebook,Yes,6.0,5,Single,9,22,1
+22,Female,Graduate,Germany,8.26,Instagram,Yes,5.0,3,Single,5,23,1
+24,Male,Undergraduate,USA,4.5,Snapchat,No,6.0,6,Complicated,5,16,0
+16,Male,Undergraduate,Other,1.86,Twitter,Yes,7.0,4,In Relationship,6,25,1
+18,Male,Graduate,UK,4.41,Snapchat,No,6.0,6,In Relationship,6,15,0
+25,Female,Graduate,USA,2.3,TikTok,Yes,8.0,5,In Relationship,4,19,1
+22,Female,Graduate,Australia,1.67,Snapchat,Yes,8.0,5,Single,8,22,1
+24,Male,High School,UK,8.3,WhatsApp,Yes,3.0,4,Complicated,8,21,1
+16,Male,High School,USA,2.75,TikTok,Yes,7.0,5,Complicated,9,20,1
+22,Female,High School,Brazil,6.21,Snapchat,Yes,5.0,4,In Relationship,3,21,1
+23,Male,Graduate,Canada,2.45,YouTube,No,8.0,7,Single,4,17,0
+16,Male,Graduate,Other,4.26,Snapchat,No,7.0,7,Single,5,15,0
+18,Male,Graduate,Australia,2.86,Facebook,Yes,7.0,5,Single,7,21,1
+17,Male,Graduate,Other,4.91,TikTok,No,5.0,5,In Relationship,10,16,0
+23,Female,Graduate,Australia,6.35,Facebook,Yes,5.0,1,Complicated,8,27,1
+23,Female,Undergraduate,Germany,6.92,YouTube,Yes,6.0,5,Single,9,22,1
+25,Male,High School,Japan,3.32,Snapchat,Yes,8.0,5,Single,10,20,1
+24,Male,Undergraduate,Germany,5.02,Twitter,Yes,5.0,4,Complicated,5,20,1
+23,Female,High School,Canada,6.83,Facebook,Yes,6.0,4,Single,7,22,1
+20,Male,Undergraduate,Brazil,4.06,Twitter,Yes,6.0,5,In Relationship,10,20,1
+23,Male,Graduate,UK,4.58,Facebook,No,5.0,6,Complicated,4,15,0
+19,Female,Undergraduate,India,4.87,YouTube,No,5.0,4,Single,5,18,0
+18,Male,Graduate,UK,1.89,TikTok,Yes,9.0,5,Complicated,7,22,1
+17,Male,Undergraduate,Other,8.45,WhatsApp,Yes,3.0,3,In Relationship,5,25,1
+17,Male,High School,Japan,7.52,Snapchat,Yes,6.0,4,In Relationship,9,24,1
+21,Male,Graduate,Japan,4.5,WhatsApp,Yes,6.0,3,In Relationship,10,22,1
+19,Male,Undergraduate,Other,7.64,YouTube,Yes,5.0,3,Single,9,22,1
+25,Female,Undergraduate,Japan,4.46,TikTok,Yes,7.0,4,Single,8,23,1
+24,Female,Undergraduate,Australia,5.54,WhatsApp,No,5.0,5,Complicated,9,15,0
+21,Male,High School,Brazil,8.25,Instagram,Yes,5.0,4,In Relationship,7,23,1
+25,Male,High School,Nigeria,4.57,Facebook,Yes,7.0,5,Single,5,21,1
+16,Female,High School,USA,8.33,Instagram,Yes,4.0,2,Single,6,28,1
+23,Female,Graduate,USA,3.33,YouTube,Yes,7.0,4,Complicated,7,20,1
+24,Female,Graduate,Nigeria,8.26,Snapchat,Yes,5.0,1,Complicated,6,28,1
+21,Female,Undergraduate,Japan,5.25,Twitter,No,5.0,7,Single,10,16,0
+21,Female,High School,Other,3.38,Twitter,No,6.0,5,Single,6,15,0
+25,Female,High School,India,2.34,Instagram,Yes,7.0,6,In Relationship,10,20,1
+25,Female,Undergraduate,UK,8.39,Snapchat,Yes,4.0,2,Complicated,10,24,1
+21,Male,High School,Canada,4.16,Instagram,Yes,6.0,3,In Relationship,10,21,1
+25,Female,Undergraduate,UK,4.99,Facebook,Yes,5.0,5,Single,6,21,1
+17,Female,High School,Japan,4.53,YouTube,No,6.0,7,Single,5,13,0
+24,Female,Undergraduate,Australia,3.26,WhatsApp,No,6.0,7,In Relationship,5,14,0
+17,Female,Graduate,Germany,3.32,TikTok,Yes,6.0,4,Complicated,6,21,1
+25,Male,Undergraduate,Germany,3.78,Snapchat,Yes,7.0,5,Single,5,21,1
+21,Female,Graduate,Other,5.5,WhatsApp,No,6.0,8,In Relationship,5,12,0
+20,Female,Undergraduate,Nigeria,6.97,TikTok,Yes,4.0,3,Single,4,26,1
+17,Female,Graduate,USA,1.68,YouTube,No,7.0,7,In Relationship,7,17,0
+19,Male,Graduate,Australia,4.6,Facebook,No,6.0,7,In Relationship,4,14,0
+20,Female,High School,Japan,2.74,Snapchat,Yes,7.0,3,Complicated,6,26,1
+17,Female,Undergraduate,Germany,4.39,Facebook,No,6.0,6,Complicated,3,15,0
+23,Female,Undergraduate,USA,6.86,WhatsApp,Yes,6.0,4,Complicated,9,25,1
+22,Male,Undergraduate,India,4.46,Facebook,Yes,6.0,2,Single,5,24,1
+18,Female,High School,Nigeria,5.82,TikTok,No,5.0,7,Single,5,17,0
+17,Female,Undergraduate,UK,6.51,Twitter,Yes,5.0,5,Single,8,21,1
+17,Male,High School,Australia,6.93,Instagram,Yes,6.0,1,Single,10,27,1
+17,Male,Undergraduate,Brazil,6.27,TikTok,Yes,6.0,2,Single,6,24,1
+22,Female,High School,UK,7.06,Snapchat,Yes,5.0,3,Complicated,8,21,1
+16,Male,Undergraduate,UK,6.41,WhatsApp,Yes,6.0,2,In Relationship,3,25,1
+23,Female,Graduate,Australia,5.3,YouTube,Yes,7.0,5,In Relationship,5,20,1
+17,Male,Undergraduate,Australia,7.24,Snapchat,Yes,4.0,4,Complicated,10,25,1
+24,Male,Graduate,Australia,3.76,Twitter,No,6.0,6,Single,1,12,0
+17,Female,High School,India,1.72,Twitter,Yes,7.0,3,Single,4,26,1
+16,Male,Graduate,Nigeria,8.0,WhatsApp,Yes,3.0,2,Complicated,4,25,1
+17,Male,Graduate,Brazil,2.83,Snapchat,Yes,8.0,3,Complicated,8,23,1
+23,Female,High School,UK,7.05,Snapchat,Yes,6.0,2,Complicated,8,29,1
+25,Male,Graduate,Japan,3.0,WhatsApp,Yes,6.0,5,Single,7,23,1
+25,Male,Graduate,UK,8.45,TikTok,Yes,3.0,3,In Relationship,8,21,1
+25,Male,High School,Australia,7.18,Instagram,Yes,6.0,4,In Relationship,4,25,1
+16,Female,Undergraduate,Brazil,4.42,WhatsApp,No,6.0,8,Single,2,14,0
+24,Male,Undergraduate,Japan,6.38,Facebook,Yes,4.0,2,Single,10,27,1
+25,Male,Graduate,Brazil,3.34,YouTube,Yes,6.0,4,In Relationship,6,22,1
+24,Male,High School,India,3.36,YouTube,No,7.0,5,Single,8,18,0
+21,Male,Undergraduate,UK,8.41,Snapchat,Yes,3.0,5,Single,7,23,1
+16,Female,Graduate,India,3.64,YouTube,No,8.0,7,In Relationship,10,15,0
+25,Male,Graduate,USA,4.14,Twitter,No,5.0,7,Complicated,7,15,0
+16,Female,Graduate,USA,1.97,Twitter,No,7.0,6,Complicated,4,15,0
+21,Female,Graduate,Japan,2.12,Facebook,No,8.0,5,In Relationship,10,18,0
+22,Male,High School,Germany,6.29,TikTok,Yes,5.0,4,Single,4,24,1
+22,Male,Undergraduate,Canada,5.51,YouTube,Yes,5.0,5,Single,6,22,1
+18,Female,Graduate,Japan,7.87,YouTube,Yes,5.0,4,In Relationship,10,23,1
+20,Male,High School,India,2.42,Instagram,Yes,6.0,3,Single,6,28,1
+16,Female,High School,Nigeria,2.44,WhatsApp,Yes,7.0,3,Single,6,22,1
+19,Male,Undergraduate,USA,7.98,YouTube,Yes,4.0,5,Complicated,9,23,1
+21,Female,Graduate,Other,5.66,Snapchat,No,5.0,7,Complicated,9,16,0
+16,Female,Graduate,USA,2.83,YouTube,Yes,7.0,6,Single,5,20,1
+23,Female,High School,Japan,2.29,WhatsApp,Yes,7.0,3,Single,10,23,1
+25,Male,Undergraduate,India,3.25,Twitter,No,6.0,8,Complicated,3,12,0
+24,Male,Undergraduate,Japan,4.16,WhatsApp,No,5.0,7,Single,9,16,0
+20,Female,Graduate,Nigeria,3.52,Facebook,No,6.0,7,In Relationship,3,14,0
+24,Male,Graduate,Nigeria,3.17,Snapchat,Yes,8.0,3,Single,7,22,1
+25,Male,High School,UK,2.54,Twitter,No,7.0,6,Single,3,17,0
+17,Female,High School,UK,6.2,Snapchat,Yes,5.0,1,In Relationship,4,29,1
+20,Female,High School,India,6.36,TikTok,Yes,6.0,2,In Relationship,8,27,1
+18,Female,Graduate,Nigeria,4.95,Facebook,No,5.0,7,Complicated,0,14,0
+19,Female,Undergraduate,USA,3.84,Snapchat,No,7.0,7,Complicated,4,12,0
+21,Male,High School,Germany,3.89,Twitter,No,7.0,6,In Relationship,10,18,0
+16,Male,Undergraduate,UK,5.89,WhatsApp,Yes,6.0,5,Complicated,8,22,1
+24,Male,High School,Other,6.3,WhatsApp,Yes,6.0,4,Complicated,3,22,1
+20,Female,High School,Nigeria,7.64,TikTok,Yes,6.0,2,In Relationship,5,26,1
+19,Female,Undergraduate,Japan,3.67,TikTok,No,7.0,7,Complicated,4,13,0
+17,Male,Undergraduate,USA,6.31,Snapchat,Yes,4.0,4,In Relationship,8,22,1
+23,Male,Undergraduate,UK,2.6,Instagram,Yes,8.0,5,Complicated,8,19,1
+20,Male,Graduate,Australia,5.52,Facebook,Yes,5.0,3,Single,10,21,1
+16,Male,Undergraduate,USA,2.1,YouTube,Yes,7.0,3,Single,4,24,1
+23,Male,High School,Nigeria,2.18,TikTok,Yes,7.0,5,In Relationship,5,19,1
+21,Female,Undergraduate,Nigeria,1.71,YouTube,No,8.0,7,Complicated,5,17,0
+24,Male,Undergraduate,India,3.78,Twitter,Yes,7.0,3,Complicated,6,22,1
+24,Male,Undergraduate,Brazil,1.96,Facebook,Yes,9.0,2,Single,4,26,1
+25,Female,High School,Other,5.67,TikTok,Yes,5.0,6,Single,9,19,1
+21,Female,Graduate,USA,2.13,WhatsApp,No,8.0,6,In Relationship,10,16,0
+19,Male,Graduate,Germany,3.6,WhatsApp,No,8.0,7,In Relationship,5,17,0
+20,Male,Undergraduate,Japan,8.28,Instagram,Yes,4.0,4,Single,5,25,1
+23,Male,High School,Japan,4.19,TikTok,No,5.0,8,Single,1,14,0
+23,Female,High School,India,2.46,WhatsApp,Yes,7.0,4,In Relationship,10,24,1
+22,Female,High School,UK,4.47,Instagram,Yes,7.0,5,In Relationship,3,23,1
+16,Female,Graduate,Germany,2.29,YouTube,Yes,6.0,6,Complicated,4,20,1
+19,Female,Graduate,India,6.29,Snapchat,Yes,5.0,2,In Relationship,5,28,1
+16,Female,Graduate,Other,3.32,Twitter,Yes,8.0,6,Single,7,20,1
+23,Male,High School,Japan,2.04,WhatsApp,Yes,7.0,4,Complicated,4,19,1
+25,Male,Graduate,UK,6.11,TikTok,Yes,5.0,3,Single,10,24,1
+18,Male,Graduate,Germany,1.88,TikTok,No,8.0,6,Complicated,6,16,0
+22,Female,Undergraduate,Australia,2.52,WhatsApp,Yes,8.0,6,Single,4,19,1
+24,Female,Undergraduate,Other,7.93,WhatsApp,Yes,5.0,4,Single,3,25,1
+17,Male,Undergraduate,India,5.18,Twitter,No,5.0,5,Complicated,4,17,0
+16,Male,Graduate,India,6.46,Instagram,Yes,6.0,3,In Relationship,9,24,1
+21,Female,High School,India,3.44,Instagram,No,6.0,5,Single,10,18,0
+19,Female,High School,Nigeria,2.26,Snapchat,Yes,6.0,4,Single,4,19,1
+25,Female,Undergraduate,USA,7.78,Facebook,Yes,6.0,2,Complicated,6,24,1
+16,Female,Graduate,Nigeria,2.35,Snapchat,No,7.0,7,In Relationship,4,15,0
+23,Female,Graduate,Canada,2.74,Instagram,No,7.0,5,Complicated,10,17,0
+19,Male,High School,Canada,1.68,Snapchat,Yes,8.0,6,In Relationship,3,19,1
+16,Female,High School,Germany,7.01,Instagram,Yes,6.0,2,In Relationship,3,25,1
+19,Male,High School,UK,5.93,TikTok,No,5.0,4,In Relationship,6,18,0
+17,Male,Undergraduate,Germany,7.18,Twitter,Yes,4.0,3,Single,9,24,1
+18,Female,Graduate,UK,4.57,Snapchat,No,5.0,6,Single,3,15,0
+16,Male,High School,Other,7.71,YouTube,Yes,6.0,3,Complicated,4,24,1
+20,Female,Undergraduate,USA,5.4,Facebook,Yes,7.0,4,In Relationship,6,20,1
+20,Male,High School,India,7.08,Twitter,Yes,6.0,4,Single,4,23,1
+16,Male,High School,USA,4.9,Instagram,Yes,6.0,4,Complicated,8,20,1
+19,Male,Undergraduate,Canada,2.19,Twitter,No,8.0,6,Single,9,17,0
+18,Male,Graduate,Nigeria,2.75,TikTok,No,7.0,5,Single,3,16,0
+20,Male,High School,Nigeria,4.71,Facebook,Yes,5.0,6,Complicated,6,20,1
+17,Female,Graduate,Nigeria,7.54,Facebook,Yes,6.0,1,In Relationship,3,27,1
+16,Female,Graduate,Japan,1.74,Snapchat,Yes,7.0,6,Single,9,19,1
+19,Male,Undergraduate,Australia,3.17,Instagram,Yes,8.0,6,Single,10,19,1
+23,Male,Graduate,Brazil,2.79,WhatsApp,No,8.0,5,In Relationship,9,16,0
+20,Male,Graduate,India,5.84,TikTok,No,6.0,6,Complicated,3,15,0
+21,Female,High School,Japan,6.43,Snapchat,Yes,6.0,5,In Relationship,7,23,1
+16,Male,Undergraduate,Germany,4.67,Snapchat,Yes,6.0,5,In Relationship,4,23,1
+19,Female,High School,India,4.23,Facebook,No,7.0,7,In Relationship,1,11,0
+19,Male,Undergraduate,Brazil,8.29,Snapchat,Yes,4.0,4,In Relationship,8,26,1
+23,Female,Undergraduate,Australia,5.47,WhatsApp,No,6.0,5,Single,8,17,0
+20,Female,High School,Other,7.97,Twitter,Yes,5.0,4,Single,6,23,1
+24,Male,Graduate,Germany,8.35,Facebook,Yes,4.0,1,Single,8,28,1
+20,Female,Undergraduate,Other,6.17,WhatsApp,Yes,5.0,3,Single,8,24,1
+16,Male,Graduate,Japan,3.06,WhatsApp,No,8.0,7,Single,9,16,0
+19,Female,Undergraduate,Other,5.74,Instagram,Yes,6.0,4,In Relationship,8,20,1
+21,Female,Undergraduate,Japan,2.11,Twitter,Yes,8.0,4,Single,4,21,1
+18,Male,Undergraduate,Nigeria,8.42,Snapchat,Yes,3.0,3,In Relationship,7,23,1
+24,Female,High School,Australia,7.34,TikTok,Yes,5.0,2,In Relationship,6,24,1
+16,Male,Undergraduate,Nigeria,8.46,Instagram,Yes,3.0,2,Single,5,30,1
+21,Female,Graduate,UK,4.0,Instagram,No,6.0,7,Complicated,4,17,0
+24,Male,Graduate,UK,6.85,Snapchat,Yes,6.0,3,In Relationship,10,26,1
+22,Female,High School,India,3.03,Snapchat,Yes,8.0,4,Complicated,4,24,1
+22,Female,High School,India,7.23,Instagram,Yes,4.0,4,Single,6,26,1
+20,Male,High School,UK,8.37,YouTube,Yes,4.0,4,Single,7,18,0
+16,Male,High School,Other,2.94,Facebook,No,8.0,7,In Relationship,1,12,0
+24,Male,Graduate,Other,1.98,WhatsApp,No,7.0,6,Single,4,18,0
+19,Female,Undergraduate,Other,2.8,Twitter,No,8.0,5,In Relationship,4,16,0
+21,Male,Undergraduate,India,5.14,YouTube,No,6.0,5,In Relationship,7,16,0
+23,Female,Graduate,Nigeria,3.08,YouTube,No,6.0,5,Complicated,10,17,0
+17,Female,Undergraduate,Japan,6.11,Instagram,Yes,6.0,4,Single,6,22,1
+22,Female,Undergraduate,Other,5.66,WhatsApp,Yes,7.0,3,Single,10,24,1
+17,Male,Undergraduate,Nigeria,4.98,Twitter,No,7.0,7,Single,3,10,0
+25,Female,High School,Australia,5.85,Instagram,Yes,7.0,5,In Relationship,7,19,1
+24,Female,Graduate,Japan,1.62,WhatsApp,No,8.0,6,In Relationship,3,17,0
+16,Male,Graduate,Australia,7.69,Facebook,Yes,5.0,2,In Relationship,9,29,1
+25,Female,Undergraduate,Germany,1.93,Snapchat,No,9.0,6,In Relationship,4,15,0
+22,Female,Undergraduate,Brazil,3.96,Twitter,No,8.0,5,In Relationship,4,15,0
+21,Male,High School,Japan,3.78,YouTube,Yes,8.0,4,Complicated,3,22,1
+21,Female,Graduate,Brazil,3.76,Instagram,Yes,8.0,5,Single,7,19,1
+21,Female,High School,Nigeria,5.95,WhatsApp,No,6.0,7,In Relationship,6,15,0
+25,Male,Graduate,Other,2.16,TikTok,Yes,6.0,4,Single,7,22,1
+24,Female,Undergraduate,Japan,3.69,YouTube,Yes,6.0,2,Complicated,5,26,1
+25,Female,High School,Nigeria,3.38,Twitter,Yes,6.0,3,In Relationship,5,25,1
+19,Male,Graduate,Australia,7.41,YouTube,Yes,4.0,3,Single,6,23,1
+20,Female,Undergraduate,Japan,8.44,YouTube,Yes,3.0,4,In Relationship,7,20,1
+17,Female,Undergraduate,India,4.28,WhatsApp,No,7.0,7,Complicated,7,16,0
+23,Male,High School,Other,2.36,WhatsApp,Yes,6.0,3,Single,5,21,1
+19,Female,Undergraduate,Brazil,3.28,Snapchat,No,8.0,6,In Relationship,6,17,0
+20,Male,Undergraduate,Nigeria,6.51,WhatsApp,Yes,5.0,4,Single,9,21,1
+20,Female,High School,Canada,3.58,WhatsApp,No,6.0,6,In Relationship,9,17,0
+21,Female,High School,UK,6.39,Snapchat,Yes,4.0,3,Single,7,26,1
+21,Male,High School,UK,3.25,Twitter,Yes,8.0,3,In Relationship,5,22,1
+25,Female,Undergraduate,Canada,2.09,TikTok,No,6.0,6,Complicated,6,18,0
+17,Female,High School,Australia,6.41,Facebook,Yes,6.0,4,In Relationship,10,26,1
+23,Male,High School,Canada,2.83,WhatsApp,Yes,6.0,6,Single,7,20,1
+19,Female,High School,Brazil,7.05,Instagram,Yes,5.0,4,In Relationship,6,26,1
+22,Female,Graduate,Other,3.29,Instagram,No,7.0,7,Complicated,3,16,0
+16,Female,Graduate,Other,4.17,YouTube,No,6.0,4,Complicated,10,18,0
+21,Female,High School,India,3.72,Snapchat,No,6.0,7,In Relationship,5,14,0
+21,Female,Undergraduate,Australia,5.79,WhatsApp,Yes,7.0,5,Single,10,20,1
+16,Male,High School,USA,3.11,Instagram,No,7.0,4,In Relationship,8,18,0
+24,Female,Undergraduate,Nigeria,2.29,Twitter,No,6.0,6,Complicated,4,12,0
+20,Male,Graduate,USA,5.18,Snapchat,No,6.0,6,In Relationship,5,14,0
+17,Female,Undergraduate,Other,8.0,Instagram,Yes,4.0,4,Complicated,5,24,1
+19,Male,Graduate,Australia,3.76,Instagram,Yes,7.0,4,Single,9,20,1
+17,Male,High School,UK,4.22,YouTube,No,7.0,6,Complicated,5,17,0
+21,Male,Undergraduate,Japan,2.9,YouTube,Yes,6.0,3,In Relationship,5,25,1
+22,Female,High School,USA,5.09,YouTube,Yes,6.0,5,In Relationship,4,19,1
+23,Female,High School,UK,6.29,TikTok,Yes,5.0,4,Complicated,7,25,1
+21,Female,Graduate,India,6.88,Instagram,Yes,6.0,4,In Relationship,5,23,1
+19,Male,High School,Other,3.32,Twitter,No,6.0,5,Single,10,16,0
+23,Female,Graduate,Other,6.58,TikTok,Yes,6.0,2,Single,6,25,1
+23,Male,Graduate,Canada,4.55,Twitter,No,6.0,6,Single,4,17,0
+18,Male,Graduate,Nigeria,8.25,YouTube,Yes,4.0,3,Complicated,7,24,1
+16,Female,Undergraduate,Nigeria,5.09,Twitter,No,6.0,6,In Relationship,4,18,0
+20,Female,Undergraduate,India,4.96,Twitter,No,7.0,5,In Relationship,8,17,0
+23,Male,Graduate,Canada,5.61,Twitter,Yes,6.0,5,Complicated,8,21,1
+23,Male,Graduate,Canada,3.48,Twitter,No,8.0,7,Single,3,13,0
+23,Female,High School,Canada,5.4,Instagram,No,5.0,4,In Relationship,9,18,0
+17,Male,High School,Japan,3.07,TikTok,No,8.0,7,Complicated,4,17,0
+16,Female,Undergraduate,India,8.32,WhatsApp,Yes,5.0,3,Complicated,10,25,1
+24,Female,Graduate,India,2.58,TikTok,No,6.0,5,In Relationship,8,16,0
+20,Male,High School,Australia,4.11,WhatsApp,Yes,5.0,4,In Relationship,9,20,1
+22,Female,Graduate,Germany,8.11,YouTube,Yes,3.0,5,Complicated,5,22,1
+25,Male,Graduate,Japan,8.31,YouTube,Yes,5.0,2,Complicated,9,27,1
+19,Female,High School,USA,5.26,YouTube,No,7.0,6,In Relationship,8,18,0
+18,Male,High School,Japan,5.65,Facebook,No,6.0,7,Complicated,8,17,0
+17,Male,Graduate,India,4.64,Snapchat,Yes,7.0,6,Complicated,6,20,1
+21,Female,Undergraduate,Other,6.21,Twitter,Yes,5.0,2,Single,3,25,1
+22,Male,Undergraduate,Canada,4.62,TikTok,Yes,6.0,3,In Relationship,9,28,1
+23,Female,Graduate,Brazil,7.27,Facebook,Yes,6.0,3,Single,9,26,1
+17,Male,Undergraduate,Other,3.53,Snapchat,No,7.0,6,Single,5,15,0
+18,Female,High School,Australia,7.72,Facebook,Yes,5.0,3,In Relationship,5,24,1
+18,Female,Undergraduate,Nigeria,2.54,Twitter,Yes,6.0,4,In Relationship,3,22,1
+23,Female,Graduate,India,7.56,Twitter,Yes,4.0,4,Complicated,5,24,1
+16,Female,High School,Canada,7.31,WhatsApp,Yes,4.0,2,Single,8,28,1
+22,Female,High School,India,8.36,Snapchat,Yes,3.0,3,Complicated,3,22,1
+20,Female,High School,Germany,2.5,TikTok,No,8.0,8,Single,3,13,0
+24,Female,High School,Australia,1.92,YouTube,Yes,9.0,4,Single,7,19,1
+24,Male,High School,Japan,6.06,Facebook,Yes,6.0,3,Single,3,26,1
+23,Female,Graduate,UK,1.5,YouTube,Yes,9.0,6,In Relationship,3,20,1
+18,Male,Undergraduate,India,4.27,Instagram,Yes,7.0,4,Complicated,8,21,1
+20,Female,Undergraduate,Canada,6.14,TikTok,Yes,5.0,5,Complicated,10,23,1
+22,Male,Graduate,India,5.27,WhatsApp,Yes,6.0,4,Complicated,3,20,1
+17,Female,Undergraduate,Canada,4.61,Facebook,No,7.0,6,Complicated,6,15,0
+19,Female,Undergraduate,USA,3.47,Twitter,No,7.0,7,Complicated,10,15,0
+18,Male,Graduate,Other,6.21,Snapchat,Yes,6.0,5,Complicated,7,21,1
+24,Female,High School,Brazil,5.99,Twitter,No,7.0,7,In Relationship,10,16,0
+21,Male,Graduate,Canada,1.83,YouTube,Yes,8.0,4,Complicated,3,19,1
+19,Female,High School,Canada,2.88,TikTok,No,6.0,8,Complicated,2,14,0
+20,Male,High School,Nigeria,3.17,TikTok,No,8.0,6,Single,10,17,0
+25,Male,High School,USA,7.92,YouTube,Yes,5.0,5,In Relationship,4,20,1
+25,Female,High School,Other,7.01,Snapchat,Yes,4.0,1,Single,4,27,1
+25,Male,Graduate,UK,5.96,TikTok,Yes,5.0,3,Single,3,22,1
+18,Female,Graduate,Brazil,5.09,Twitter,Yes,6.0,5,Complicated,8,20,1
+20,Female,High School,Japan,5.61,Twitter,No,6.0,6,Single,6,16,0
+19,Male,Undergraduate,Canada,6.18,Twitter,Yes,4.0,1,Single,3,30,1
+19,Male,Undergraduate,Other,2.99,YouTube,No,7.0,5,Single,8,16,0
+16,Male,High School,Australia,4.58,Twitter,No,6.0,6,Single,2,14,0
+18,Female,Graduate,Canada,2.75,Instagram,No,8.0,6,In Relationship,1,13,0
+20,Female,High School,Germany,7.17,Twitter,Yes,5.0,4,In Relationship,6,24,1
+16,Male,Graduate,Australia,7.03,TikTok,Yes,6.0,3,Complicated,8,24,1
+23,Female,High School,Germany,6.49,Snapchat,Yes,5.0,1,In Relationship,9,29,1
+22,Male,Undergraduate,Australia,5.35,Facebook,No,7.0,4,In Relationship,8,18,0
+22,Female,Undergraduate,Brazil,4.36,WhatsApp,No,6.0,5,In Relationship,4,17,0
+21,Male,Undergraduate,Japan,5.09,Twitter,No,6.0,7,Complicated,1,9,0
+21,Male,Graduate,Germany,3.25,Twitter,Yes,6.0,5,In Relationship,8,20,1
+22,Female,Graduate,USA,4.8,Snapchat,No,5.0,7,Complicated,10,16,0
+23,Female,High School,Germany,7.42,YouTube,Yes,6.0,3,In Relationship,6,26,1
+22,Female,Graduate,Brazil,6.84,Twitter,Yes,4.0,3,Single,9,26,1
+19,Female,High School,Germany,5.49,YouTube,No,5.0,8,Complicated,3,14,0
+16,Male,High School,India,7.88,YouTube,Yes,5.0,3,Single,4,24,1
+18,Female,Undergraduate,India,4.22,WhatsApp,No,5.0,7,Complicated,7,17,0
+25,Male,Graduate,Nigeria,3.43,Instagram,No,8.0,5,Complicated,10,18,0
+23,Female,Graduate,USA,6.66,TikTok,Yes,6.0,1,Complicated,4,27,1
+22,Male,High School,UK,3.42,Twitter,Yes,8.0,4,In Relationship,4,19,1
+17,Female,Undergraduate,Nigeria,2.65,Facebook,No,7.0,6,Complicated,9,16,0
+19,Female,High School,USA,3.25,Twitter,No,6.0,6,Complicated,6,18,0
+23,Male,Undergraduate,Australia,7.39,Facebook,Yes,5.0,5,Single,6,20,1
+16,Male,Undergraduate,USA,7.36,WhatsApp,Yes,4.0,2,Single,3,24,1
+22,Male,High School,Germany,7.24,Twitter,Yes,6.0,5,In Relationship,4,18,0
+19,Male,High School,Germany,3.76,Instagram,No,6.0,4,Complicated,7,18,0
+25,Female,High School,India,7.7,YouTube,Yes,5.0,1,Complicated,8,27,1
+23,Male,Undergraduate,USA,5.76,Snapchat,Yes,7.0,2,Single,3,25,1
+25,Male,Undergraduate,Canada,6.67,WhatsApp,Yes,6.0,3,Single,10,21,1
+21,Male,Undergraduate,Germany,6.01,WhatsApp,Yes,6.0,5,Complicated,6,22,1
+25,Female,Graduate,Germany,2.78,Twitter,No,8.0,7,Single,1,10,0
+17,Male,Graduate,Japan,7.32,Facebook,Yes,5.0,3,Complicated,10,24,1
+19,Female,Undergraduate,India,8.16,TikTok,Yes,3.0,2,Complicated,5,29,1
+24,Male,Undergraduate,Brazil,4.75,YouTube,Yes,6.0,3,Complicated,10,22,1
+19,Male,High School,USA,1.59,Snapchat,Yes,8.0,4,In Relationship,4,22,1
+22,Male,High School,Brazil,8.02,Facebook,Yes,4.0,1,In Relationship,3,29,1
+18,Female,Graduate,Nigeria,8.11,Facebook,Yes,4.0,3,In Relationship,7,22,1
+20,Female,Graduate,Australia,6.64,WhatsApp,Yes,4.0,3,Single,9,22,1
+24,Female,Graduate,Australia,6.63,Facebook,Yes,4.0,5,Single,6,22,1
+20,Female,Undergraduate,Other,2.26,Twitter,No,7.0,6,In Relationship,0,12,0
+25,Male,Undergraduate,Nigeria,6.21,Instagram,Yes,5.0,5,Complicated,9,19,1
+21,Female,Graduate,Germany,8.5,WhatsApp,Yes,5.0,1,Single,4,27,1
+24,Female,Graduate,Canada,4.08,Snapchat,Yes,5.0,6,In Relationship,3,19,1
+21,Female,High School,Other,4.89,Twitter,No,7.0,5,In Relationship,6,18,0
+18,Male,High School,Nigeria,7.08,TikTok,Yes,5.0,4,Single,5,25,1
+21,Female,Undergraduate,Canada,6.53,Twitter,Yes,6.0,5,Complicated,9,23,1
+19,Male,Undergraduate,India,3.54,Instagram,No,7.0,5,In Relationship,9,17,0
+25,Male,Undergraduate,USA,5.63,Facebook,Yes,7.0,5,Complicated,6,21,1
+17,Female,High School,Japan,7.47,TikTok,Yes,5.0,4,Complicated,10,24,1
+19,Female,Undergraduate,Brazil,1.91,WhatsApp,No,8.0,8,In Relationship,2,12,0
+18,Male,Graduate,Brazil,3.86,Twitter,Yes,8.0,4,In Relationship,6,21,1
+24,Female,High School,UK,3.76,WhatsApp,Yes,6.0,5,Complicated,10,20,1
+20,Male,High School,Canada,7.13,Facebook,Yes,4.0,3,Single,8,23,1
+25,Female,High School,Brazil,3.22,Instagram,Yes,8.0,6,In Relationship,4,20,1
+23,Female,Undergraduate,Nigeria,4.07,Instagram,No,5.0,8,Complicated,4,14,0
+23,Female,Graduate,India,7.06,Facebook,Yes,5.0,3,Complicated,10,27,1
+17,Male,High School,India,2.76,Snapchat,No,6.0,5,Complicated,6,16,0
+18,Male,Graduate,Australia,7.46,Instagram,Yes,6.0,3,Complicated,10,24,1
+18,Female,Graduate,Germany,5.16,TikTok,Yes,5.0,4,Single,5,19,1
+20,Male,High School,Other,5.36,Snapchat,No,7.0,5,In Relationship,9,18,0
+18,Female,Undergraduate,India,8.11,Twitter,Yes,4.0,3,Single,6,25,1
+17,Female,High School,Japan,2.27,Snapchat,No,7.0,5,Single,7,15,0
+16,Male,Undergraduate,Canada,4.15,Instagram,Yes,5.0,6,In Relationship,7,20,1
+24,Female,Graduate,India,7.78,Facebook,Yes,6.0,1,Single,9,28,1
+25,Female,High School,Germany,6.45,Facebook,Yes,6.0,1,In Relationship,9,29,1
+21,Male,Graduate,India,2.04,Facebook,No,8.0,7,Single,3,13,0
+24,Male,Undergraduate,Nigeria,5.11,Twitter,No,7.0,4,Complicated,9,18,0
+24,Female,High School,Japan,6.29,Instagram,Yes,5.0,3,Single,8,25,1
+17,Female,Graduate,Canada,7.32,WhatsApp,Yes,5.0,4,In Relationship,3,25,1
+21,Male,Graduate,Nigeria,3.8,TikTok,No,6.0,6,In Relationship,3,14,0
+19,Male,Graduate,Japan,7.79,YouTube,Yes,4.0,4,In Relationship,4,24,1
+23,Female,High School,UK,3.98,YouTube,No,6.0,6,In Relationship,3,12,0
+21,Male,High School,Canada,8.14,Twitter,Yes,3.0,1,Single,5,27,1
+21,Male,Graduate,Canada,1.86,WhatsApp,Yes,8.0,4,In Relationship,4,21,1
+22,Male,Graduate,UK,6.6,Facebook,Yes,4.0,3,Single,9,22,1
+16,Female,High School,UK,4.48,Snapchat,No,6.0,7,Complicated,6,17,0
+19,Female,Undergraduate,Nigeria,1.93,YouTube,No,8.0,8,In Relationship,1,14,0
+21,Male,High School,USA,1.5,Twitter,Yes,7.0,5,Single,7,20,1
+23,Female,Undergraduate,Australia,2.28,Twitter,No,8.0,7,Complicated,8,17,0
+19,Female,High School,Other,4.19,Instagram,No,5.0,7,In Relationship,4,16,0
+17,Female,Undergraduate,Nigeria,8.43,Facebook,Yes,3.0,3,In Relationship,3,24,1
+18,Female,Graduate,UK,3.53,Snapchat,Yes,6.0,3,In Relationship,9,21,1
+24,Female,Undergraduate,Other,3.4,Facebook,No,8.0,6,Complicated,7,16,0
+20,Male,Undergraduate,Australia,5.37,Facebook,No,7.0,6,In Relationship,1,14,0
+20,Male,Graduate,Canada,8.43,Facebook,Yes,4.0,2,Complicated,3,24,1
+21,Male,Graduate,Australia,2.74,Instagram,Yes,8.0,3,In Relationship,6,23,1
+21,Female,High School,Other,5.91,WhatsApp,Yes,5.0,5,Single,10,19,1
+18,Female,High School,UK,2.82,YouTube,No,7.0,8,Complicated,1,13,0
+17,Male,High School,Brazil,3.22,Twitter,No,6.0,5,In Relationship,3,18,0
+17,Male,Graduate,USA,2.43,WhatsApp,No,6.0,8,Complicated,2,13,0
+17,Male,High School,Nigeria,6.82,YouTube,Yes,6.0,4,Single,9,23,1
+18,Male,High School,USA,3.09,YouTube,No,7.0,5,Single,6,15,0
+17,Female,Undergraduate,India,5.81,Instagram,No,6.0,8,In Relationship,4,14,0
+18,Female,High School,Australia,5.87,TikTok,No,7.0,5,Single,5,17,0
+18,Female,High School,Brazil,4.63,WhatsApp,No,5.0,4,In Relationship,5,18,0
+18,Female,Undergraduate,Germany,4.96,YouTube,Yes,6.0,6,In Relationship,10,20,1
+24,Male,Undergraduate,India,5.57,YouTube,No,5.0,4,Single,8,18,0
+24,Female,High School,India,1.92,TikTok,Yes,8.0,4,Single,6,19,1
+16,Male,High School,UK,4.14,Instagram,No,6.0,7,Single,3,15,0
+18,Female,High School,India,3.22,Instagram,Yes,8.0,6,Complicated,7,19,1
+23,Female,Graduate,Germany,4.61,Twitter,No,7.0,7,Complicated,1,9,0
+16,Female,Undergraduate,Nigeria,5.38,WhatsApp,Yes,5.0,4,Single,9,22,1
+18,Male,Undergraduate,Other,1.89,YouTube,Yes,8.0,5,Complicated,9,21,1
+22,Male,High School,Germany,6.03,Facebook,Yes,4.0,3,Complicated,3,21,1
+20,Male,Graduate,Canada,5.97,Instagram,No,7.0,6,Single,3,17,0
+21,Male,Undergraduate,USA,8.36,WhatsApp,Yes,5.0,1,Single,9,29,1
+23,Male,Undergraduate,UK,2.56,YouTube,No,8.0,9,Complicated,4,10,0
+24,Female,Undergraduate,UK,3.87,TikTok,No,8.0,6,Single,5,18,0
+25,Female,High School,USA,2.5,WhatsApp,No,7.0,4,In Relationship,5,18,0
+17,Female,Graduate,Germany,3.97,Instagram,Yes,8.0,4,Single,10,20,1
+16,Female,Undergraduate,Brazil,4.36,Snapchat,Yes,6.0,3,Complicated,9,22,1
+24,Female,Undergraduate,USA,5.84,Twitter,No,6.0,7,Single,4,12,0
+22,Male,High School,Brazil,7.62,Twitter,Yes,4.0,3,In Relationship,4,26,1
+21,Female,Graduate,Nigeria,2.99,Twitter,No,6.0,5,Single,6,18,0
+21,Male,Graduate,Brazil,1.94,WhatsApp,No,7.0,7,In Relationship,7,16,0
+20,Male,High School,UK,1.98,YouTube,Yes,9.0,5,Single,3,19,1
+17,Female,Undergraduate,Australia,2.65,TikTok,Yes,7.0,5,Complicated,9,23,1
+16,Male,High School,Other,5.82,TikTok,No,6.0,5,Complicated,9,16,0
+20,Male,Undergraduate,UK,5.94,Twitter,No,7.0,7,Single,9,15,0
+19,Female,High School,Canada,8.3,Snapchat,Yes,4.0,4,In Relationship,8,25,1
+17,Male,Undergraduate,Brazil,4.11,Snapchat,Yes,7.0,5,Complicated,9,23,1
+20,Male,High School,India,2.13,Instagram,Yes,6.0,4,In Relationship,3,24,1
+20,Female,High School,Canada,6.94,Snapchat,Yes,6.0,3,In Relationship,7,24,1
+20,Female,Graduate,Canada,1.53,YouTube,No,9.0,8,In Relationship,2,13,0
+18,Female,High School,Japan,8.31,Facebook,Yes,3.0,1,Complicated,5,27,1
+24,Male,Graduate,Other,6.99,WhatsApp,Yes,6.0,5,Complicated,4,22,1
+25,Female,High School,UK,8.38,Twitter,Yes,3.0,5,Single,4,23,1
+17,Female,Graduate,India,2.25,TikTok,No,6.0,7,Single,3,14,0
+16,Female,High School,Nigeria,8.21,Instagram,Yes,4.0,3,In Relationship,3,25,1
+18,Female,High School,Canada,5.74,Snapchat,No,5.0,4,Single,8,18,0
+18,Male,High School,UK,3.37,YouTube,No,8.0,5,In Relationship,9,18,0
+19,Female,High School,Canada,6.31,Twitter,Yes,6.0,3,In Relationship,8,27,1
+25,Male,Graduate,Brazil,4.51,Snapchat,No,7.0,7,Complicated,3,14,0
+20,Female,Undergraduate,USA,2.3,WhatsApp,No,6.0,7,In Relationship,8,15,0
+18,Female,High School,USA,3.73,Instagram,Yes,8.0,4,In Relationship,7,19,1
+25,Male,Graduate,Canada,2.22,TikTok,Yes,7.0,3,Single,3,22,1
+23,Female,High School,Australia,4.45,Instagram,Yes,5.0,5,Single,7,23,1
+16,Male,Undergraduate,Australia,2.42,YouTube,No,6.0,6,Single,9,16,0
+20,Female,Undergraduate,Germany,4.3,Snapchat,Yes,7.0,5,In Relationship,4,20,1
+21,Male,High School,Canada,1.83,Instagram,No,7.0,6,Complicated,2,14,0
+24,Male,Graduate,USA,3.32,WhatsApp,No,7.0,9,Complicated,3,10,0
+20,Male,High School,Other,4.72,Facebook,Yes,7.0,6,Single,10,19,1
+23,Female,Undergraduate,Nigeria,3.08,TikTok,No,8.0,5,Single,10,16,0
+16,Male,High School,Canada,4.78,YouTube,No,7.0,7,In Relationship,7,17,0
+23,Male,Graduate,India,7.9,Facebook,Yes,6.0,2,Complicated,4,28,1
+18,Female,High School,India,3.18,YouTube,Yes,7.0,5,Single,4,19,1
+21,Female,High School,UK,4.28,YouTube,Yes,5.0,4,Complicated,9,19,1
+22,Male,Undergraduate,Canada,4.32,Snapchat,Yes,5.0,4,Single,6,26,1
+17,Male,High School,USA,7.77,Snapchat,Yes,6.0,5,In Relationship,10,22,1
+19,Male,High School,Germany,5.96,Twitter,No,7.0,7,In Relationship,7,17,0
+19,Male,Undergraduate,India,2.67,TikTok,No,6.0,4,In Relationship,4,18,0
+18,Male,Graduate,Germany,8.29,Snapchat,Yes,3.0,5,Complicated,8,19,1
+23,Female,Graduate,Germany,8.43,TikTok,Yes,3.0,2,Single,5,27,1
+21,Female,High School,Canada,5.54,Twitter,No,7.0,5,In Relationship,10,16,0
+24,Male,Undergraduate,Germany,7.72,YouTube,Yes,4.0,1,In Relationship,5,27,1
+23,Male,Graduate,Australia,5.87,Twitter,No,5.0,6,Single,6,16,0
+20,Male,High School,Nigeria,3.64,YouTube,No,7.0,8,Complicated,4,13,0
+18,Male,Graduate,Australia,2.5,Twitter,No,6.0,6,In Relationship,6,17,0
+22,Female,Undergraduate,India,7.75,TikTok,Yes,5.0,2,Single,7,27,1
+25,Female,Graduate,UK,4.13,WhatsApp,Yes,7.0,6,Complicated,8,19,1
+23,Female,Undergraduate,Nigeria,4.44,YouTube,No,5.0,7,In Relationship,6,16,0
+25,Female,High School,Other,5.3,Snapchat,No,6.0,7,In Relationship,3,15,0
+17,Male,Undergraduate,India,3.83,Instagram,No,8.0,7,Complicated,3,17,0
+19,Male,Graduate,Nigeria,2.45,Twitter,No,8.0,4,Single,4,18,0
+16,Male,Graduate,India,5.14,Facebook,No,6.0,5,Single,7,17,0
+22,Female,High School,Canada,7.39,Snapchat,Yes,6.0,4,Complicated,6,26,1
+23,Female,Undergraduate,Australia,6.17,Snapchat,Yes,5.0,1,Complicated,9,28,1
+16,Female,High School,Other,4.61,TikTok,No,6.0,7,Complicated,6,16,0
+21,Female,Graduate,India,2.72,Facebook,Yes,8.0,5,In Relationship,4,20,1
+23,Female,Undergraduate,Other,6.11,Snapchat,Yes,4.0,2,Complicated,4,26,1
+23,Female,Undergraduate,Canada,8.37,WhatsApp,Yes,4.0,5,Complicated,3,22,1
+18,Female,High School,Nigeria,4.14,Twitter,Yes,6.0,5,In Relationship,6,21,1
+19,Male,Undergraduate,Japan,7.16,Facebook,Yes,4.0,6,Complicated,10,19,1
+19,Male,Graduate,Nigeria,5.01,TikTok,Yes,7.0,4,Single,4,21,1
+18,Female,High School,India,4.99,Instagram,Yes,6.0,5,Complicated,8,19,1
+17,Male,Undergraduate,India,5.24,Facebook,Yes,5.0,3,Complicated,4,27,1
+25,Female,Undergraduate,USA,1.73,YouTube,No,9.0,8,In Relationship,5,13,0
+16,Male,Undergraduate,India,7.14,Snapchat,Yes,4.0,3,Complicated,6,25,1
+21,Female,Undergraduate,Australia,6.97,Facebook,Yes,6.0,3,In Relationship,9,21,1
+24,Male,High School,Nigeria,2.33,Snapchat,No,6.0,5,Single,3,16,0
+19,Female,Graduate,Japan,5.48,WhatsApp,No,6.0,8,In Relationship,0,8,0
+21,Female,Graduate,Canada,8.49,Facebook,Yes,5.0,4,In Relationship,7,23,1
+19,Female,Undergraduate,Japan,5.02,Instagram,Yes,5.0,4,Complicated,6,20,1
+20,Male,High School,Germany,6.57,WhatsApp,Yes,5.0,3,Single,7,22,1
+25,Female,Undergraduate,USA,7.54,YouTube,Yes,6.0,4,In Relationship,6,22,1
+16,Female,Graduate,Other,4.54,YouTube,Yes,6.0,5,Complicated,7,19,1
+18,Female,Undergraduate,Canada,2.42,Instagram,No,7.0,7,In Relationship,3,17,0
+25,Female,Undergraduate,Australia,6.11,WhatsApp,Yes,4.0,3,Single,8,25,1
+23,Male,Undergraduate,USA,5.56,Instagram,Yes,5.0,4,In Relationship,7,21,1
+23,Male,High School,UK,2.53,Snapchat,No,7.0,8,In Relationship,0,12,0
+24,Male,High School,Australia,8.33,Instagram,Yes,3.0,3,Complicated,8,24,1
+22,Male,Graduate,Brazil,7.63,Facebook,Yes,4.0,3,Single,3,26,1
+17,Male,Undergraduate,Japan,6.51,Twitter,Yes,6.0,3,Complicated,9,28,1
+24,Male,Graduate,USA,5.75,Twitter,Yes,7.0,4,Single,8,22,1
+19,Female,High School,Nigeria,3.7,Instagram,No,8.0,7,Single,8,17,0
+23,Male,Undergraduate,Brazil,3.11,WhatsApp,Yes,8.0,5,In Relationship,8,20,1
+21,Male,High School,Brazil,4.45,Facebook,No,5.0,4,In Relationship,7,18,0
+24,Female,Graduate,India,2.38,Instagram,No,8.0,6,In Relationship,8,15,0
+18,Female,Graduate,Japan,3.19,TikTok,Yes,6.0,5,Single,4,22,1
+21,Female,Undergraduate,Nigeria,6.68,YouTube,Yes,5.0,3,Single,7,26,1
+17,Male,Undergraduate,Nigeria,3.89,Snapchat,Yes,7.0,2,In Relationship,5,27,1
+18,Male,Graduate,Canada,4.51,TikTok,Yes,5.0,4,In Relationship,7,20,1
+23,Female,High School,UK,3.52,TikTok,No,6.0,8,Complicated,1,14,0

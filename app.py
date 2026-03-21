@@ -99,8 +99,8 @@ def local_css():
     .stProgress>div>div>div{ background:linear-gradient(90deg,var(--sage),#3a9878)!important; border-radius:20px!important; }
     .stProgress>div>div{ background:var(--bg)!important; box-shadow:inset 3px 3px 7px var(--sd),inset -3px -3px 7px var(--sl)!important; border-radius:20px!important; border:none!important; height:10px!important; }
 
-    .stTabs [data-baseweb="tab-list"]{ background:var(--bg)!important; border-radius:14px; padding:4px; box-shadow:inset 3px 3px 7px var(--sd),inset -3px -3px 7px var(--sl); gap:4px; }
-    .stTabs [data-baseweb="tab"]{ background:transparent!important; color:var(--tm)!important; border-radius:10px!important; font-weight:500!important; font-size:0.84rem!important; }
+    .stTabs [data-baseweb="tab-list"]{ background:var(--bg)!important; border-radius:14px; padding:8px; box-shadow:inset 3px 3px 7px var(--sd),inset -3px -3px 7px var(--sl); gap:12px; }
+    .stTabs [data-baseweb="tab"]{ background:transparent!important; color:var(--tm)!important; border-radius:10px!important; font-weight:500!important; font-size:0.87rem!important; padding:0.6rem 1.2rem!important; }
     .stTabs [aria-selected="true"]{ background:var(--bg)!important; color:var(--slate)!important; box-shadow:4px 4px 10px var(--sd),-4px -4px 10px var(--sl)!important; }
 
     .stAlert{ background:var(--bg)!important; border-radius:14px!important; border:none!important; box-shadow:inset 3px 3px 7px var(--sd),inset -3px -3px 7px var(--sl)!important; color:var(--tb)!important; font-size:0.87rem!important; }
@@ -434,7 +434,7 @@ elif menu == "Dataset Insights":
     """, unsafe_allow_html=True)
     try:
         df = pd.read_csv(os.path.join(BASE_DIR, 'social_media_addiction_data.csv'))
-        tab1,tab2,tab3 = st.tabs(["  Screen Time vs Mental Health  ","  Platform Usage  ","  Risk Distribution  "])
+        tab1,tab2,tab3 = st.tabs(["Screen Time vs Mental Health","Platform Usage","Risk Distribution"])
         with tab1:
             fig = px.scatter(df,x="Avg_Daily_Usage_Hours",y="Mental_Health_Score",color="Status",trendline="ols",
                 color_discrete_sequence=["#d96b6b","#4aaa88","#6470b8"],template="none",

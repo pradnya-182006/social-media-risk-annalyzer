@@ -329,10 +329,10 @@ if menu == "Home":
                 on your sleep, focus, academic performance, and relationships.
                 </p>
                 <div style='display:flex;flex-wrap:wrap;gap:5px;'>
-                    <span class='stat-pill'><span class='dot' style='background:#d96b6b;'></span>Risk Detection</span>
-                    <span class='stat-pill'><span class='dot' style='background:#6470b8;'></span>BSMAS Assessment</span>
-                    <span class='stat-pill'><span class='dot' style='background:#4aaa88;'></span>AI Predictions</span>
-                    <span class='stat-pill'><span class='dot' style='background:#d99a2e;'></span>Screen Guard</span>
+                    <span class='stat-pill'><span class='dot' style='background:#ee5e76;'></span>Risk Detection</span>
+                    <span class='stat-pill'><span class='dot' style='background:#604e9c;'></span>BSMAS Assessment</span>
+                    <span class='stat-pill'><span class='dot' style='background:#2bb996;'></span>AI Predictions</span>
+                    <span class='stat-pill'><span class='dot' style='background:#e9a147;'></span>Screen Guard</span>
                 </div>
             </div>
         """, unsafe_allow_html=True)
@@ -364,10 +364,10 @@ if menu == "Home":
 
     # Stats row
     for col,(val,lbl,clr) in zip(st.columns(4,gap="medium"),[
-        (f"{total_assessments:,}","Students Assessed","#6470b8"),
-        (f"{avg_usage}h","Avg Daily Usage","#d96b6b"),
-        ("99.1%","Model Accuracy","#4aaa88"),
-        ("48h","Avg Detox Relief","#d99a2e"),
+        (f"{total_assessments:,}","Students Assessed","#604e9c"),
+        (f"{avg_usage}h","Avg Daily Usage","#ee5e76"),
+        ("99.1%","Model Accuracy","#2bb996"),
+        ("48h","Avg Detox Relief","#e9a147"),
     ]):
         with col:
             st.markdown(f"""
@@ -390,9 +390,9 @@ if menu == "Home":
             st.markdown(f"""
                 <div class='feat-card'>
                     <div class='feat-icon'>{icon}</div>
-                    <p style='font-weight:600;color:#2d3250;font-size:0.87rem;margin:0 0 5px;'>{title}</p>
-                    <p style='font-size:0.76rem;color:#9aa0bc;line-height:1.6;margin:0;'>{desc}</p>
-                    <div style='margin-top:10px;width:26px;height:3px;border-radius:2px;background:{clr};'></div>
+                    <p style='font-weight:700;color:#4b3e7c;font-size:0.87rem;margin:0 0 5px;'>{title}</p>
+                    <p style='font-size:0.76rem;color:#6a6287;line-height:1.6;margin:0;'>{desc}</p>
+                    <div style='margin-top:10px;width:26px;height:3px;border-radius:2px;background:linear-gradient(90deg, {clr}, transparent);'></div>
                 </div>
             """, unsafe_allow_html=True)
 
@@ -450,17 +450,17 @@ elif menu == "Psychological Assessment":
         badge_cls = "badge-l" if total<=12 else "badge-m" if total<=18 else "badge-h"
 
         st.markdown(f"""
-            <div class='nm-card' style='border-left:4px solid {color};margin-top:1.5rem;'>
+            <div class='nm-card' style='border-left:5px solid {color};margin-top:1.5rem;'>
                 <div style='display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;'>
                     <div>
                         <span class='sec-label' style='color:{color};'>Assessment Result</span>
-                        <h2 style='margin:0;color:{color};font-size:1.45rem;'>{label}</h2>
-                        <p style='margin:5px 0 0;font-size:0.87rem;'>{advice}</p>
+                        <h2 style='margin:0;color:{color};font-size:1.6rem;font-weight:800;'>{label}</h2>
+                        <p style='margin:5px 0 0;font-size:0.95rem;color:#6a6287;'>{advice}</p>
                     </div>
                     <div style='text-align:right;'>
                         <span class='badge {badge_cls}'>{severity} RISK</span>
-                        <p style='margin:6px 0 0;font-family:DM Mono,monospace;font-size:2rem;font-weight:600;color:{color};'>
-                            {total}<span style='font-size:0.88rem;color:#9aa0bc;'>/30</span>
+                        <p style='margin:6px 0 0;font-family:DM Mono,monospace;font-size:2.4rem;font-weight:700;color:{color};'>
+                            {total}<span style='font-size:1rem;color:#9aa0bc;'>/30</span>
                         </p>
                     </div>
                 </div>
@@ -486,10 +486,10 @@ elif menu == "Psychological Assessment":
                 number={'suffix':'%','font':{'color':color,'family':'DM Mono','size':38}},
                 title={'text':"Clinical Risk Index",'font':{'color':'#9aa0bc','size':12}},
                 gauge={'axis':{'range':[0,100],'tickcolor':'#9aa0bc','tickfont':{'color':'#9aa0bc','size':10}},
-                       'bar':{'color':color,'thickness':0.24},'bgcolor':'#e8ecf1','borderwidth':0,
-                       'steps':[{'range':[0,40],'color':'rgba(74,170,136,.13)'},
-                                 {'range':[40,70],'color':'rgba(217,154,46,.13)'},
-                                 {'range':[70,100],'color':'rgba(217,107,107,.13)'}]}))
+                       'bar':{'color':color,'thickness':0.24},'bgcolor':'rgba(0,0,0,0)','borderwidth':0,
+                       'steps':[{'range':[0,40],'color':'rgba(43,185,150,.1)'},
+                                 {'range':[40,70],'color':'rgba(233,161,71,.1)'},
+                                 {'range':[70,100],'color':'rgba(238,94,118,.1)'}]}))
             fig.update_layout(**NM, height=280)
             st.plotly_chart(fig, use_container_width=True)
 
@@ -497,11 +497,12 @@ elif menu == "Psychological Assessment":
             st.markdown(f"""
                 <div class='nm-card' style='height:100%;'>
                     <span class='sec-label'>Cure</span>
-                    {''.join([f"""<div style='display:flex;align-items:flex-start;gap:10px;
-                        padding:0.6rem 0.9rem;border-radius:12px;margin-bottom:8px;
-                        box-shadow:inset 3px 3px 7px #c5c9d0,inset -3px -3px 7px #fff;'>
-                        <span style='color:{color};font-size:0.9rem;margin-top:1px;flex-shrink:0;'>✓</span>
-                        <span style='color:#4a5070;font-size:0.84rem;line-height:1.5;'>{c}</span>
+                    {''.join([f"""<div style='display:flex;align-items:flex-start;gap:12px;
+                        padding:0.7rem 1rem;border-radius:14px;margin-bottom:10px;
+                        background:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.6);
+                        box-shadow:0 4px 12px rgba(110,100,160,0.03);'>
+                        <span style='color:{color};font-size:1rem;margin-top:1px;flex-shrink:0;font-weight:900;'>✓</span>
+                        <span style='color:#4b3e7c;font-size:0.88rem;line-height:1.5;font-weight:600;'>{c}</span>
                     </div>""" for c in cures])}
                 </div>
             """, unsafe_allow_html=True)
@@ -510,8 +511,8 @@ elif menu == "Psychological Assessment":
         st.markdown("<span class='sec-label'>Score Breakdown by Dimension</span>", unsafe_allow_html=True)
         qs   = ["Preoccupation","Tolerance","Mood Mod.","Relapse","Withdrawal","Conflict"]
         vals = [q1,q2,q3,q4,q5,q6]
-        fig2 = go.Figure(go.Bar(x=qs, y=vals, width=0.5, marker_line_width=0,
-            marker_color=[color if v>=4 else '#7080c0' if v==3 else '#b0b8cc' for v in vals]))
+        fig2 = go.Figure(go.Bar(x=qs, y=vals, width=0.5, borderwidth=0,
+            marker_color=[color if v>=4 else '#604e9c' if v==3 else 'rgba(110,100,160,0.2)' for v in vals]))
         fig2.update_layout(**NM, height=220,
             yaxis=dict(range=[0,5],tickvals=[1,2,3,4,5],gridcolor='#d4d8e0'),
             xaxis=dict(tickfont=dict(size=11,color='#9aa0bc')), showlegend=False)
@@ -531,7 +532,7 @@ elif menu == "Dataset Insights":
         tab1,tab2,tab3 = st.tabs(["Screen Time vs Mental Health","Platform Usage","Risk Distribution"])
         with tab1:
             fig = px.scatter(df,x="Avg_Daily_Usage_Hours",y="Mental_Health_Score",color="Status",trendline="ols",
-                color_discrete_sequence=["#d96b6b","#4aaa88","#6470b8"],template="none",
+                color_discrete_sequence=["#ee5e76","#2bb996","#604e9c"],template="none",
                 labels={"Avg_Daily_Usage_Hours":"Daily Usage (hrs)","Mental_Health_Score":"Mental Health Score"})
             fig.update_layout(**NM,height=380)
             fig.update_traces(marker=dict(size=7,opacity=0.7))
@@ -542,18 +543,18 @@ elif menu == "Dataset Insights":
                 pc = df["Most_Used_Platform"].value_counts().reset_index()
                 pc.columns = ["Platform","Count"]
                 fig2 = px.bar(pc,x="Platform",y="Count",color="Platform",template="none",
-                    color_discrete_sequence=["#d96b6b","#6470b8","#4aaa88","#d99a2e","#9aa0bc","#b080c0","#70a0d0"])
+                    color_discrete_sequence=["#ee5e76","#2bb996","#604e9c","#e9a147","#9aa0bc","#b080c0","#70a0d0"])
                 fig2.update_layout(**NM,height=340,showlegend=False)
-                fig2.update_traces(marker_line_width=0,width=0.5)
+                fig2.update_traces(marker_line_width=0,width=0.45)
                 st.plotly_chart(fig2,use_container_width=True)
         with tab3:
             if "Status" in df.columns:
                 sc = df["Status"].value_counts()
                 fig3 = go.Figure(go.Pie(labels=sc.index,values=sc.values,hole=0.55,
-                    marker=dict(colors=["#d96b6b","#4aaa88","#d99a2e"],line=dict(color='#e8ecf1',width=3)),
-                    textfont=dict(family='DM Sans',size=12,color='#4a5070')))
+                    marker=dict(colors=["#ee5e76","#2bb996","#e9a147"],line=dict(color='rgba(255,255,255,0.8)',width=4)),
+                    textfont=dict(family='Nunito',size=13,color='#4b3e7c')))
                 fig3.update_layout(**NM,height=320,showlegend=True,
-                    legend=dict(font=dict(color='#4a5070',family='DM Sans')))
+                    legend=dict(font=dict(color='#6a6287',family='Nunito')))
                 st.plotly_chart(fig3,use_container_width=True)
     except Exception as e:
         st.markdown(f"""<div class='nm-inset' style='border-left:3px solid #d96b6b;'>
@@ -599,14 +600,14 @@ elif menu == "Screen Time Controller":
     with cb:
         elapsed      = (datetime.now().timestamp()-config["start_time"])/3600
         progress_pct = min(1.0,elapsed/new_limit) if new_limit>0 else 1.0
-        bar_color    = "#4aaa88" if progress_pct<0.6 else "#d99a2e" if progress_pct<0.9 else "#d96b6b"
+        bar_color    = "#2bb996" if progress_pct<0.6 else "#e9a147" if progress_pct<0.9 else "#ee5e76"
         remaining    = max(0,new_limit-elapsed)
         fig_g = go.Figure(go.Indicator(mode="gauge+number+delta",value=round(elapsed,2),
             delta={'reference':new_limit,'suffix':'h limit','font':{'color':'#9aa0bc','size':12}},
             number={'suffix':"h",'font':{'color':bar_color,'family':'DM Mono','size':34}},
             title={'text':"Session Time",'font':{'color':'#9aa0bc','size':12}},
             gauge={'axis':{'range':[0,new_limit],'tickcolor':'#9aa0bc','tickfont':{'color':'#9aa0bc','size':10}},
-                   'bar':{'color':bar_color,'thickness':0.26},'bgcolor':'#e8ecf1','borderwidth':0,
+                   'bar':{'color':bar_color,'thickness':0.26},'bgcolor':'rgba(0,0,0,0)','borderwidth':0,
                    'steps':[{'range':[0,new_limit*.6],'color':'rgba(74,170,136,.1)'},
                              {'range':[new_limit*.6,new_limit*.9],'color':'rgba(217,154,46,.1)'},
                              {'range':[new_limit*.9,new_limit],'color':'rgba(217,107,107,.1)'}],
@@ -626,14 +627,14 @@ elif menu == "Screen Time Controller":
 
     if elapsed>new_limit:
         st.markdown(f"""
-            <div style='background:#e8ecf1;border-radius:14px;padding:1rem 1.4rem;
-                box-shadow:inset 4px 4px 9px #c5c9d0,inset -4px -4px 9px #fff;
-                border-left:4px solid #d96b6b;margin-top:1rem;display:flex;align-items:center;gap:12px;'>
-                <span class='pulse' style='color:#d96b6b;font-size:1.2rem;'>⚠</span>
+            <div style='background:rgba(255,255,255,0.4);border-radius:14px;padding:1rem 1.4rem;
+                box-shadow:var(--glass-shadow);backdrop-filter:blur(8px);
+                border-left:5px solid #ee5e76;margin-top:1rem;display:flex;align-items:center;gap:12px;'>
+                <span class='pulse' style='color:#ee5e76;font-size:1.4rem;'>⚠</span>
                 <div>
-                    <p style='color:#d96b6b;font-weight:600;font-size:0.88rem;margin:0;'>Daily Limit Exceeded</p>
-                    <p style='color:#9aa0bc;font-size:0.77rem;margin:2px 0 0;'>
-                    Used <strong style='color:#d96b6b;'>{elapsed:.2f}h</strong> —
+                    <p style='color:#ee5e76;font-weight:800;font-size:0.95rem;margin:0;'>Daily Limit Exceeded</p>
+                    <p style='color:#6a6287;font-size:0.82rem;margin:2px 0 0;'>
+                    Used <strong style='color:#ee5e76;'>{elapsed:.2f}h</strong> —
                     {elapsed-new_limit:.2f}h over your {new_limit}h limit. Guard is active.
                     </p>
                 </div>

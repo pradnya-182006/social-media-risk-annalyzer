@@ -584,33 +584,60 @@ elif menu == "Dataset Insights":
     """, unsafe_allow_html=True)
     try:
         df = pd.read_csv(os.path.join(BASE_DIR, 'social_media_addiction_data.csv'))
-        tab1,tab2,tab3 = st.tabs(["Screen Time vs Mental Health","Platform Usage","Risk Distribution"])
-        with tab1:
+        # Use radio instead of tabs to ensure animations play exactly when the user switches views
+        view = st.radio("Insights View:", ["🧠 Mental Health Impact", "📱 Platform Usage", "⚠️ Risk Distribution"], horizontal=True, label_visibility="collapsed")
+        st.markdown("<br>", unsafe_allow_html=True)
+        
+        if view == "🧠 Mental Health Impact":
             fig = px.scatter(df,x="Avg_Daily_Usage_Hours",y="Mental_Health_Score",color="Status",trendline="ols",
-                color_discrete_sequence=["#ee5e76","#2bb996","#604e9c"],template="none",
+                color_discrete_sequence=["#ee5e76","#2bb996","#6366f1"],template="none",
                 labels={"Avg_Daily_Usage_Hours":"Daily Usage (hrs)","Mental_Health_Score":"Mental Health Score"})
             fig.update_layout(**NM,height=380)
             fig.update_traces(marker=dict(size=7,opacity=0.7))
             st.plotly_chart(fig,use_container_width=True)
-            st.markdown("<div class='nm-inset'><p style='color:#4a5070;font-size:0.84rem;margin:0;'>💡 Mental resilience drops sharply after <strong style='color:#2d3250;'>5 hours</strong> of daily usage. Addicted students scored 38% lower.</p></div>", unsafe_allow_html=True)
-        with tab2:
+            st.markdown("<div class='nm-inset'><p style='color:#475569;font-size:0.86rem;margin:0;font-weight:600;'>💡 Mental resilience drops sharply after <strong style='color:#1e293b;'>5 hours</strong> of daily usage. Addicted students scored 38% lower.</p></div>", unsafe_allow_html=True)
+            
+        elif view == "📱 Platform Usage":
             if "Most_Used_Platform" in df.columns:
                 pc = df["Most_Used_Platform"].value_counts().reset_index()
                 pc.columns = ["Platform","Count"]
-                fig2 = px.bar(pc,x="Platform",y="Count",color="Platform",template="none",
-                    color_discrete_sequence=["#ee5e76","#2bb996","#604e9c","#e9a147","#9aa0bc","#b080c0","#70a0d0"])
-                fig2.update_layout(**NM,height=340,showlegend=False)
-                fig2.update_traces(marker_line_width=0,width=0.45)
-                st.plotly_chart(fig2,use_container_width=True)
-        with tab3:
+                
+                chart_slot = st.empty()
+                import time
+                
+                # 0-to-Rating Animation Loop
+                steps = 15
+                max_cnt = pc["Count"].max() * 1.05
+                colors = ["#f43f5e", "#10b981", "#6366f1", "#f59e0b", "#94a3b8", "#a855f7", "#62b1ff"]
+                
+                for step in range(1, steps + 1):
+                    temp_pc = pc.copy()
+                    temp_pc["Count"] = temp_pc["Count"] * (step / steps)
+                    
+                    fig2 = px.bar(temp_pc,x="Platform",y="Count",color="Platform",template="none",
+                        color_discrete_sequence=colors)
+                    fig2.update_layout(**NM,height=360,showlegend=False, yaxis=dict(range=[0, max_cnt], fixedrange=True))
+                    fig2.update_traces(marker_line_width=0,width=0.45)
+                    chart_slot.plotly_chart(fig2,use_container_width=True)
+                    time.sleep(0.02)
+                    
+        elif view == "⚠️ Risk Distribution":
             if "Status" in df.columns:
                 sc = df["Status"].value_counts()
-                fig3 = go.Figure(go.Pie(labels=sc.index,values=sc.values,hole=0.55,
-                    marker=dict(colors=["#ee5e76","#2bb996","#e9a147"],line=dict(color='rgba(255,255,255,0.8)',width=4)),
-                    textfont=dict(family='Nunito',size=13,color='#4b3e7c')))
-                fig3.update_layout(**NM,height=320,showlegend=True,
-                    legend=dict(font=dict(color='#6a6287',family='Nunito')))
-                st.plotly_chart(fig3,use_container_width=True)
+                
+                chart_slot = st.empty()
+                import time
+                steps = 12
+                
+                for step in range(1, steps + 1):
+                    # Animate Pie Hole & Opacity for a smooth reveal
+                    fig3 = go.Figure(go.Pie(labels=sc.index,values=sc.values, hole=0.9 - (0.35 * (step/steps)),
+                        marker=dict(colors=["#f43f5e","#10b981","#f59e0b"],line=dict(color='rgba(255,255,255,0.8)',width=4)),
+                        textfont=dict(family='Nunito',size=13,color='#1e293b'), opacity=(step/steps)))
+                    fig3.update_layout(**NM,height=340,showlegend=True,
+                        legend=dict(font=dict(color='#475569',family='Nunito')))
+                    chart_slot.plotly_chart(fig3,use_container_width=True)
+                    time.sleep(0.025)
     except Exception as e:
         st.markdown(f"""<div class='nm-inset' style='border-left:3px solid #d96b6b;'>
             <p style='color:#d96b6b;font-size:0.87rem;margin:0;'>⚠ Place <code>social_media_addiction_data.csv</code> in project root.</p>

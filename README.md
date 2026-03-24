@@ -9,6 +9,13 @@
 
 ---
 
+## 🚀 Live Demo
+**Try the app live here:** [https://haleigh-tawdriest-nonadjunctively.ngrok-free.dev](https://haleigh-tawdriest-nonadjunctively.ngrok-free.dev)
+
+*(Note: Click "Visit Site" if prompted by the ngrok warning page)*
+
+---
+
 ## Overview
 
 This project investigates the relationship between social media usage habits and student well-being using a real-world survey dataset of **705 students** across multiple countries. The application takes a student's usage profile as input and outputs a **personalised risk score** along with insights into how their habits compare to the broader student population.

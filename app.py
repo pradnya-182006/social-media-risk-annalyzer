@@ -602,42 +602,60 @@ elif menu == "Dataset Insights":
                 pc = df["Most_Used_Platform"].value_counts().reset_index()
                 pc.columns = ["Platform","Count"]
                 
-                chart_slot = st.empty()
-                import time
-                
-                # 0-to-Rating Animation Loop
-                steps = 15
-                max_cnt = pc["Count"].max() * 1.05
                 colors = ["#f43f5e", "#10b981", "#6366f1", "#f59e0b", "#94a3b8", "#a855f7", "#62b1ff"]
+                fig2 = px.bar(pc,x="Platform",y="Count",color="Platform",template="none",
+                    color_discrete_sequence=colors)
+                fig2.update_layout(**NM,height=360,showlegend=False)
+                fig2.update_traces(marker_line_width=0,width=0.45)
                 
-                for step in range(1, steps + 1):
-                    temp_pc = pc.copy()
-                    temp_pc["Count"] = temp_pc["Count"] * (step / steps)
-                    
-                    fig2 = px.bar(temp_pc,x="Platform",y="Count",color="Platform",template="none",
-                        color_discrete_sequence=colors)
-                    fig2.update_layout(**NM,height=360,showlegend=False, yaxis=dict(range=[0, max_cnt], fixedrange=True))
-                    fig2.update_traces(marker_line_width=0,width=0.45)
-                    chart_slot.plotly_chart(fig2,use_container_width=True)
-                    time.sleep(0.02)
+                # Render using 60fps CSS injected HTML
+                html_str = fig2.to_html(include_plotlyjs="require", full_html=False)
+                animated_html = f"""
+                <style>
+                @keyframes barGrow {{
+                    from {{ transform: scaleY(0); opacity: 0; }}
+                    to {{ transform: scaleY(1); opacity: 1; }}
+                }}
+                .js-plotly-plot .cartesianlayer .trace.bars rect.point {{
+                    transform-box: fill-box !important;
+                    transform-origin: bottom !important;
+                    animation: barGrow 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+                }}
+                body {{ background: transparent !important; margin: 0; overflow: hidden; }}
+                </style>
+                {html_str}
+                """
+                import streamlit.components.v1 as components
+                components.html(animated_html, height=380)
                     
         elif view == "⚠️ Risk Distribution":
             if "Status" in df.columns:
                 sc = df["Status"].value_counts()
                 
-                chart_slot = st.empty()
-                import time
-                steps = 12
+                fig3 = go.Figure(go.Pie(labels=sc.index,values=sc.values, hole=0.55,
+                    marker=dict(colors=["#f43f5e","#10b981","#f59e0b"],line=dict(color='rgba(255,255,255,0.8)',width=4)),
+                    textfont=dict(family='Nunito',size=13,color='#1e293b')))
+                fig3.update_layout(**NM,height=340,showlegend=True,
+                    legend=dict(font=dict(color='#475569',family='Nunito')))
                 
-                for step in range(1, steps + 1):
-                    # Animate Pie Hole & Opacity for a smooth reveal
-                    fig3 = go.Figure(go.Pie(labels=sc.index,values=sc.values, hole=0.9 - (0.35 * (step/steps)),
-                        marker=dict(colors=["#f43f5e","#10b981","#f59e0b"],line=dict(color='rgba(255,255,255,0.8)',width=4)),
-                        textfont=dict(family='Nunito',size=13,color='#1e293b'), opacity=(step/steps)))
-                    fig3.update_layout(**NM,height=340,showlegend=True,
-                        legend=dict(font=dict(color='#475569',family='Nunito')))
-                    chart_slot.plotly_chart(fig3,use_container_width=True)
-                    time.sleep(0.025)
+                html_str = fig3.to_html(include_plotlyjs="require", full_html=False)
+                animated_html = f"""
+                <style>
+                @keyframes pieReveal {{
+                    from {{ transform: scale(0.6) rotate(-45deg); opacity: 0; }}
+                    to {{ transform: scale(1) rotate(0deg); opacity: 1; }}
+                }}
+                .js-plotly-plot .pie path {{
+                    transform-box: fill-box !important;
+                    transform-origin: center !important;
+                    animation: pieReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+                }}
+                body {{ background: transparent !important; margin: 0; overflow: hidden; }}
+                </style>
+                {html_str}
+                """
+                import streamlit.components.v1 as components
+                components.html(animated_html, height=360)
     except Exception as e:
         st.markdown(f"""<div class='nm-inset' style='border-left:3px solid #d96b6b;'>
             <p style='color:#d96b6b;font-size:0.87rem;margin:0;'>⚠ Place <code>social_media_addiction_data.csv</code> in project root.</p>

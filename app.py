@@ -616,10 +616,11 @@ elif menu == "Dataset Insights":
                     from {{ transform: scaleY(0); opacity: 0; }}
                     to {{ transform: scaleY(1); opacity: 1; }}
                 }}
-                .js-plotly-plot .cartesianlayer .trace.bars rect.point {{
+                .js-plotly-plot .cartesianlayer .trace.bars path,
+                .js-plotly-plot .cartesianlayer .trace.bars rect {{
                     transform-box: fill-box !important;
                     transform-origin: bottom !important;
-                    animation: barGrow 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+                    animation: barGrow 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
                 }}
                 body {{ background: transparent !important; margin: 0; overflow: hidden; }}
                 </style>
@@ -645,10 +646,10 @@ elif menu == "Dataset Insights":
                     from {{ transform: scale(0.6) rotate(-45deg); opacity: 0; }}
                     to {{ transform: scale(1) rotate(0deg); opacity: 1; }}
                 }}
-                .js-plotly-plot .pie path {{
+                .js-plotly-plot path.surface {{
                     transform-box: fill-box !important;
                     transform-origin: center !important;
-                    animation: pieReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+                    animation: pieReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
                 }}
                 body {{ background: transparent !important; margin: 0; overflow: hidden; }}
                 </style>

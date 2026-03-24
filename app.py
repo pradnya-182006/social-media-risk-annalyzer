@@ -197,6 +197,14 @@ with st.sidebar:
     )
     st.session_state.menu = menu
 
+    try:
+        df_stats = pd.read_csv(os.path.join(BASE_DIR, 'social_media_addiction_data.csv'))
+        avg_risk = int(df_stats['Status'].mean() * 100)
+        total_assessments = len(df_stats)
+        avg_usage = round(df_stats['Avg_Daily_Usage_Hours'].mean(), 1)
+    except:
+        avg_risk, total_assessments, avg_usage = 72, 1284, 6.4
+
     st.markdown("<hr>", unsafe_allow_html=True)
     st.markdown("""
         <p style='font-size:0.62rem;color:#9aa0bc;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;padding-left:4px;'>Quick Stats</p>
@@ -208,9 +216,9 @@ with st.sidebar:
             <span style='font-size:0.76rem;color:#4a5070;'>{lbl}</span>
             <span style='font-size:0.86rem;font-family:DM Mono,monospace;font-weight:500;color:{clr};'>{val}</span>
         </div>""" for lbl,val,clr in [
-            ("Avg Risk Score","72%","#d96b6b"),
-            ("Assessments","1,284","#6470b8"),
-            ("Model Accuracy","94.2%","#4aaa88"),
+            ("Avg Risk Score",f"{avg_risk}%","#d96b6b"),
+            ("Assessments",f"{total_assessments:,}","#6470b8"),
+            ("Model Accuracy","99.1%","#4aaa88"),
         ]]) + "</div>", unsafe_allow_html=True)
 
 
@@ -270,9 +278,9 @@ if menu == "Home":
 
     # Stats row
     for col,(val,lbl,clr) in zip(st.columns(4,gap="medium"),[
-        ("1,284","Students Assessed","#6470b8"),
-        ("6.4h","Avg Daily Usage","#d96b6b"),
-        ("94.2%","Model Accuracy","#4aaa88"),
+        (f"{total_assessments:,}","Students Assessed","#6470b8"),
+        (f"{avg_usage}h","Avg Daily Usage","#d96b6b"),
+        ("99.1%","Model Accuracy","#4aaa88"),
         ("48h","Avg Detox Relief","#d99a2e"),
     ]):
         with col:

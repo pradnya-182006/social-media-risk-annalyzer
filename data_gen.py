@@ -7,7 +7,7 @@ np.random.seed(42)
 random.seed(42)
 
 def generate_data(n_samples=705):
-    platforms = ['Instagram', 'Facebook', 'TikTok', 'YouTube', 'Snapchat', 'Twitter', 'WhatsApp']
+    platforms = ['Instagram', 'YouTube', 'Snapchat', 'Threads', 'LinkedIn', 'WhatsApp', 'Twitter']
     countries = ['USA', 'India', 'UK', 'Canada', 'Australia', 'Germany', 'Brazil', 'Nigeria', 'Japan', 'Other']
     academic_levels = ['High School', 'Undergraduate', 'Graduate']
     relationship_statuses = ['Single', 'In Relationship', 'Complicated']

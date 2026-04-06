@@ -28,7 +28,7 @@ preprocessor = ColumnTransformer(
     ])
 
 # XGBoost model
-model = XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42)
+model = XGBClassifier(eval_metric='logloss', random_state=42)
 
 # Pipeline
 clf_pipeline = Pipeline(steps=[

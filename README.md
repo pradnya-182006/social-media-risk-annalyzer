@@ -10,9 +10,9 @@
 ---
 
 ## 🚀 Live Demo
-**Try the app live here:** [https://haleigh-tawdriest-nonadjunctively.ngrok-free.dev](https://haleigh-tawdriest-nonadjunctively.ngrok-free.dev)
+**Try the app live here:** [social-media-risk-annalyzer.streamlit.app](https://social-media-risk-annalyzer-5muhcog2gkgi425d6mcvza.streamlit.app/)
 
-*(Note: Click "Visit Site" if prompted by the ngrok warning page)*
+*(Note: The application is permanently hosted and updated via Streamlit Community Cloud)*
 
 ---
 

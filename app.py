@@ -690,23 +690,35 @@ elif menu == "Screen Time Controller":
 
     # Auto-reset on new day (matches background_monitor logic)
     if not config or config.get("date") != current_date:
+        # Archive yesterday before reset
+        yesterday = config.get("date", "")
+        history = config.get("history", {})
+        if yesterday and config.get("elapsed_secs", 0) > 0:
+            history[yesterday] = config.get("elapsed_secs", 0.0)
+            if len(history) > 30:
+                oldest = sorted(history)[0]
+                del history[oldest]
         config.update({
             "limit_hours": config.get("limit_hours", 4.0),
             "status": "active",
             "date": current_date,
             "elapsed_secs": 0.0,
             "last_update": current_ts,
-            "history": config.get("history", {}),
+            "history": history,
             "alert_sent": {},
         })
         with open(CONFIG_PATH,'w') as f: json.dump(config, f, indent=2)
 
+    # ── Guard Configuration & Gauge ──────────────
     ca,cb = st.columns([1,1], gap="large")
     with ca:
         st.markdown("<div class='nm-card'>", unsafe_allow_html=True)
         st.markdown("<span class='sec-label'>Guard Configuration</span>", unsafe_allow_html=True)
         new_limit = st.number_input("Daily Screen Limit (Hours)", 0.5, 12.0, float(config.get("limit_hours", 4.0)), 0.5)
         st.markdown("<br>", unsafe_allow_html=True)
+
+        # Activate button
+        st.markdown('<div class="cta-btn">', unsafe_allow_html=True)
         if st.button("⟶  Activate Real-Time Guard", key="act"):
             config["limit_hours"]=new_limit; config["status"]="active"
             config["last_update"]=current_ts
@@ -715,44 +727,116 @@ elif menu == "Screen Time Controller":
                     creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
             except: pass
             st.success("✓ AI Guard is now active in the background!")
-        if st.button("↺  Reset Timer", key="rst"):
-            config["elapsed_secs"]=0.0
-            config["last_update"]=current_ts
-            config["alert_sent"]={}
-            with open(CONFIG_PATH,'w') as f: json.dump(config, f, indent=2)
-            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        # Pause / Resume toggle
+        is_paused = config.get("status") == "paused"
+        p1, p2 = st.columns(2)
+        with p1:
+            if st.button("⏸  Pause Tracking" if not is_paused else "▶  Resume Tracking", key="pause_resume"):
+                if is_paused:
+                    config["status"] = "active"
+                    config["last_update"] = current_ts
+                else:
+                    config["status"] = "paused"
+                with open(CONFIG_PATH,'w') as f: json.dump(config, f, indent=2)
+                st.rerun()
+        with p2:
+            if st.button("↺  Reset Timer", key="rst"):
+                config["elapsed_secs"]=0.0
+                config["last_update"]=current_ts
+                config["alert_sent"]={}
+                with open(CONFIG_PATH,'w') as f: json.dump(config, f, indent=2)
+                st.rerun()
         st.markdown("</div>", unsafe_allow_html=True)
-        st.markdown("<div class='nm-inset' style='margin-top:0;'><p style='color:#9aa0bc;font-size:0.79rem;margin:0;'>💡 Once activated, the Guard works outside the browser. You don't need to keep this tab open.</p></div>", unsafe_allow_html=True)
+
+        # Status badge
+        status_label = config.get("status", "inactive").upper()
+        status_clr = "#2bb996" if status_label == "ACTIVE" else "#e9a147" if status_label == "PAUSED" else "#94a3b8"
+        st.markdown(f"""
+            <div class='nm-inset' style='margin-top:0;display:flex;align-items:center;gap:10px;'>
+                <span class='dot' style='background:{status_clr};width:10px;height:10px;'></span>
+                <span style='font-size:0.8rem;font-weight:700;color:{status_clr};'>{status_label}</span>
+                <span style='font-size:0.76rem;color:#9aa0bc;margin-left:auto;'>Guard runs in background — close this tab safely.</span>
+            </div>
+        """, unsafe_allow_html=True)
 
     with cb:
         limit_m      = new_limit * 60.0
         elapsed      = config.get("elapsed_secs", 0.0) / 60.0  # seconds → minutes
         progress_pct = min(1.0,elapsed/limit_m) if limit_m>0 else 1.0
-        bar_color    = "#2bb996" if progress_pct<0.6 else "#e9a147" if progress_pct<0.9 else "#ee5e76"
+        bar_color    = "#2bb996" if progress_pct<0.5 else "#e9a147" if progress_pct<0.75 else "#ee5e76" if progress_pct<1.0 else "#b84040"
         remaining    = max(0,limit_m-elapsed)
-        fig_g = go.Figure(go.Indicator(mode="gauge+number+delta",value=round(elapsed,2),
+
+        # Gauge with multi-level alert zones (50%, 75%, 90%, 100%)
+        fig_g = go.Figure(go.Indicator(mode="gauge+number+delta",value=round(elapsed,1),
             delta={'reference':limit_m,'suffix':'m limit','font':{'color':'#9aa0bc','size':12}},
             number={'suffix':"m",'font':{'color':bar_color,'family':'DM Mono','size':34}},
             title={'text':"Session Time",'font':{'color':'#9aa0bc','size':12}},
-            gauge={'axis':{'range':[0,limit_m],'tickcolor':'#9aa0bc','tickfont':{'color':'#9aa0bc','size':10}},
+            gauge={'axis':{'range':[0,limit_m*1.2],'tickcolor':'#9aa0bc','tickfont':{'color':'#9aa0bc','size':9}},
                    'bar':{'color':bar_color,'thickness':0.26},'bgcolor':'rgba(0,0,0,0)','borderwidth':0,
-                   'steps':[{'range':[0,limit_m*.6],'color':'rgba(74,170,136,.1)'},
-                             {'range':[limit_m*.6,limit_m*.9],'color':'rgba(217,154,46,.1)'},
-                             {'range':[limit_m*.9,limit_m],'color':'rgba(217,107,107,.1)'}],
+                   'steps':[
+                       {'range':[0,limit_m*0.50],'color':'rgba(74,170,136,.08)'},
+                       {'range':[limit_m*0.50,limit_m*0.75],'color':'rgba(99,102,241,.08)'},
+                       {'range':[limit_m*0.75,limit_m*0.90],'color':'rgba(233,161,71,.1)'},
+                       {'range':[limit_m*0.90,limit_m],'color':'rgba(238,94,118,.12)'},
+                       {'range':[limit_m,limit_m*1.2],'color':'rgba(184,64,64,.12)'},
+                   ],
                    'threshold':{'line':{'color':'#d96b6b','width':3},'thickness':0.75,'value':limit_m}}))
         fig_g.update_layout(**NM,height=260)
         st.plotly_chart(fig_g,use_container_width=True)
 
+    # ── Progress bar ──────────────────────────────
     st.progress(progress_pct, text=f"{int(progress_pct*100)}% of daily limit consumed")
-    m1,m2,m3 = st.columns(3,gap="medium")
+
+    # ── Metric cards ──────────────────────────────
+    m1,m2,m3,m4 = st.columns(4,gap="medium")
     with m1: st.metric("Session Duration",f"{elapsed:.1f}m",
                 delta=f"{remaining:.1f}m left" if elapsed<limit_m else "Limit reached!",
                 delta_color="normal" if elapsed<limit_m else "inverse")
-    with m2: st.metric("Daily Limit",f"{new_limit}h",delta="Guard Active" if config.get('status')=='active' else "Inactive")
+    with m2: st.metric("Daily Limit",f"{new_limit}h",
+                delta="Guard Active" if config.get('status')=='active' else "Paused" if config.get('status')=='paused' else "Inactive")
     with m3:
         pct=int(progress_pct*100)
         st.metric("Usage %",f"{pct}%",delta=f"{100-pct}% safe zone" if pct<100 else "Exceeded!")
+    with m4:
+        alerts_fired = len(config.get("alert_sent", {}))
+        st.metric("Alerts Sent", f"{alerts_fired}/4",
+                  delta="All clear" if alerts_fired==0 else f"{alerts_fired} triggered",
+                  delta_color="normal" if alerts_fired==0 else "inverse")
 
+    # ── Alert thresholds status ───────────────────
+    alert_sent = config.get("alert_sent", {})
+    thresholds = {"50%": 0.50, "75%": 0.75, "90%": 0.90, "100%": 1.00}
+    threshold_html_items = []
+    for label, frac in thresholds.items():
+        reached = progress_pct >= frac
+        alerted = label in alert_sent
+        if reached and alerted:
+            icon, clr, status_txt = "🔔", "#ee5e76", "Alerted"
+        elif reached:
+            icon, clr, status_txt = "⚠️", "#e9a147", "Reached"
+        else:
+            icon, clr, status_txt = "✓", "#2bb996", "Safe"
+        threshold_html_items.append(f"""
+            <div style='display:flex;align-items:center;gap:10px;padding:0.5rem 0.8rem;
+                        background:rgba(255,255,255,0.4);border-radius:10px;border:1px solid rgba(255,255,255,0.7);'>
+                <span style='font-size:1rem;'>{icon}</span>
+                <span style='font-weight:700;color:#4b3e7c;font-size:0.82rem;flex:1;'>{label} Threshold</span>
+                <span style='font-size:0.72rem;font-weight:700;color:{clr};background:rgba(255,255,255,0.7);
+                             padding:3px 10px;border-radius:20px;'>{status_txt}</span>
+            </div>
+        """)
+    st.markdown(f"""
+        <div class='nm-card' style='margin-top:1rem;'>
+            <span class='sec-label'>Alert Thresholds</span>
+            <div style='display:grid;grid-template-columns:1fr 1fr;gap:8px;'>
+                {"".join(threshold_html_items)}
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # ── Limit exceeded warning ────────────────────
     if elapsed>limit_m:
         st.markdown(f"""
             <div style='background:rgba(255,255,255,0.4);border-radius:14px;padding:1rem 1.4rem;
@@ -766,5 +850,52 @@ elif menu == "Screen Time Controller":
                     {elapsed-limit_m:.1f}m over your {new_limit}h limit. Guard is active.
                     </p>
                 </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    # ── 30-Day Usage History Chart ────────────────
+    history = config.get("history", {})
+    if history:
+        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown("<span class='sec-label'>30-Day Screen Time History</span>", unsafe_allow_html=True)
+
+        hist_dates = sorted(history.keys())[-30:]
+        hist_minutes = [round(history[d] / 60.0, 1) for d in hist_dates]
+        hist_labels = [datetime.strptime(d, "%Y-%m-%d").strftime("%b %d") for d in hist_dates]
+        limit_line = new_limit * 60.0
+
+        bar_colors = ["#2bb996" if m <= limit_line*0.75 else "#e9a147" if m <= limit_line else "#ee5e76" for m in hist_minutes]
+
+        fig_hist = go.Figure()
+        fig_hist.add_trace(go.Bar(
+            x=hist_labels, y=hist_minutes, marker_color=bar_colors,
+            marker_line_width=0, width=0.55, name="Usage (min)",
+            hovertemplate="<b>%{x}</b><br>%{y:.1f} min<extra></extra>"
+        ))
+        fig_hist.add_hline(y=limit_line, line_dash="dash", line_color="#d96b6b", line_width=2,
+                           annotation_text=f"Limit ({new_limit}h)", annotation_position="top right",
+                           annotation_font=dict(color="#d96b6b", size=11, family="Nunito"))
+        fig_hist.update_layout(**NM, height=280, showlegend=False,
+            yaxis=dict(title="Minutes", gridcolor="rgba(99,102,241,0.06)", tickfont=dict(size=10)),
+            xaxis=dict(tickfont=dict(size=9, color="#9aa0bc"), tickangle=-45))
+        st.plotly_chart(fig_hist, use_container_width=True)
+
+        # Weekly summary stats
+        if len(hist_minutes) >= 7:
+            last_7 = hist_minutes[-7:]
+            avg_7 = sum(last_7) / len(last_7)
+            max_7 = max(last_7)
+            min_7 = min(last_7)
+            over_days = sum(1 for m in last_7 if m > limit_line)
+
+            s1,s2,s3,s4 = st.columns(4, gap="medium")
+            with s1: st.metric("7-Day Avg", f"{avg_7:.0f}m", delta=f"{'Under' if avg_7 <= limit_line else 'Over'} limit")
+            with s2: st.metric("Peak Day", f"{max_7:.0f}m")
+            with s3: st.metric("Lowest Day", f"{min_7:.0f}m")
+            with s4: st.metric("Days Over Limit", f"{over_days}/7", delta="Great!" if over_days == 0 else f"{over_days} days", delta_color="normal" if over_days == 0 else "inverse")
+    else:
+        st.markdown("""
+            <div class='nm-inset' style='margin-top:1.5rem;text-align:center;padding:1.5rem;'>
+                <p style='color:#9aa0bc;font-size:0.85rem;margin:0;'>📊 Usage history will appear here after your first full day of tracking.</p>
             </div>
         """, unsafe_allow_html=True)

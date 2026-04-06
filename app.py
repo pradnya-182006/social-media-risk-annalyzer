@@ -688,35 +688,45 @@ elif menu == "Screen Time Controller":
         except:
             pass
 
+    # Auto-reset on new day (matches background_monitor logic)
     if not config or config.get("date") != current_date:
-        config.update({"limit":4.0,"status":"inactive","date":current_date,"elapsed_time":0.0,"last_update_time":current_ts})
-        with open(CONFIG_PATH,'w') as f: json.dump(config,f)
+        config.update({
+            "limit_hours": config.get("limit_hours", 4.0),
+            "status": "active",
+            "date": current_date,
+            "elapsed_secs": 0.0,
+            "last_update": current_ts,
+            "history": config.get("history", {}),
+            "alert_sent": {},
+        })
+        with open(CONFIG_PATH,'w') as f: json.dump(config, f, indent=2)
 
     ca,cb = st.columns([1,1], gap="large")
     with ca:
         st.markdown("<div class='nm-card'>", unsafe_allow_html=True)
         st.markdown("<span class='sec-label'>Guard Configuration</span>", unsafe_allow_html=True)
-        new_limit = st.number_input("Daily Screen Limit (Hours)", 0.5, 12.0, float(config.get("limit", 4.0)), 0.5)
+        new_limit = st.number_input("Daily Screen Limit (Hours)", 0.5, 12.0, float(config.get("limit_hours", 4.0)), 0.5)
         st.markdown("<br>", unsafe_allow_html=True)
         if st.button("⟶  Activate Real-Time Guard", key="act"):
-            config["limit"]=new_limit; config["status"]="active"
-            config["last_update_time"]=current_ts
-            with open(CONFIG_PATH,'w') as f: json.dump(config,f)
+            config["limit_hours"]=new_limit; config["status"]="active"
+            config["last_update"]=current_ts
+            with open(CONFIG_PATH,'w') as f: json.dump(config, f, indent=2)
             try: subprocess.Popen(["python", os.path.join(BASE_DIR, "background_monitor.py")],
                     creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
             except: pass
             st.success("✓ AI Guard is now active in the background!")
         if st.button("↺  Reset Timer", key="rst"):
-            config["elapsed_time"]=0.0
-            config["last_update_time"]=current_ts
-            with open(CONFIG_PATH,'w') as f: json.dump(config,f)
+            config["elapsed_secs"]=0.0
+            config["last_update"]=current_ts
+            config["alert_sent"]={}
+            with open(CONFIG_PATH,'w') as f: json.dump(config, f, indent=2)
             st.rerun()
         st.markdown("</div>", unsafe_allow_html=True)
         st.markdown("<div class='nm-inset' style='margin-top:0;'><p style='color:#9aa0bc;font-size:0.79rem;margin:0;'>💡 Once activated, the Guard works outside the browser. You don't need to keep this tab open.</p></div>", unsafe_allow_html=True)
 
     with cb:
         limit_m      = new_limit * 60.0
-        elapsed      = config.get("elapsed_time", 0.0) / 60.0
+        elapsed      = config.get("elapsed_secs", 0.0) / 60.0  # seconds → minutes
         progress_pct = min(1.0,elapsed/limit_m) if limit_m>0 else 1.0
         bar_color    = "#2bb996" if progress_pct<0.6 else "#e9a147" if progress_pct<0.9 else "#ee5e76"
         remaining    = max(0,limit_m-elapsed)

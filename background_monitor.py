@@ -5,11 +5,20 @@ from plyer import notification
 
 CONFIG_FILE = 'screen_config.json'
 
+from datetime import datetime
+
 def get_config():
     if os.path.exists(CONFIG_FILE):
-        with open(CONFIG_FILE, 'r') as f:
-            return json.load(f)
-    return {"limit": 4.0, "status": "active", "start_time": time.time()}
+        try:
+            with open(CONFIG_FILE, 'r') as f:
+                return json.load(f)
+        except:
+            pass
+    return {"limit": 4.0, "status": "active", "date": datetime.now().strftime("%Y-%m-%d"), "elapsed_time": 0.0, "last_update_time": time.time()}
+
+def save_config(config):
+    with open(CONFIG_FILE, 'w') as f:
+        json.dump(config, f)
 
 def send_alert(message):
     try:
@@ -28,17 +37,35 @@ def monitor():
     
     while True:
         config = get_config()
-        if config["status"] == "active":
-            # Simulate tracking: In a real app, this would poll OS usage APIs.
-            # Here we track the 'session' duration since the background agent started
-            elapsed_hours = (time.time() - config["start_time"]) / 3600
-            limit = config["limit"]
+        current_time = time.time()
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        
+        if config.get("date") != current_date:
+            config["date"] = current_date
+            config["elapsed_time"] = 0.0
+            config["last_update_time"] = current_time
+            save_config(config)
+            
+        if config.get("status") == "active":
+            last_update = config.get("last_update_time", current_time)
+            delta = current_time - last_update
+            
+            # If delta is between 0 and 5 minutes, add to elapsed time.
+            # A larger delta means the PC was asleep/off.
+            if 0 < delta < 300:
+                config["elapsed_time"] = config.get("elapsed_time", 0.0) + delta
+                
+            config["last_update_time"] = current_time
+            save_config(config)
+            
+            elapsed_hours = config.get("elapsed_time", 0.0) / 3600.0
+            limit = config.get("limit", 4.0)
             
             if elapsed_hours > limit:
                 # Alert every 15 minutes if over limit
-                if time.time() - last_alert_time > 900: 
+                if current_time - last_alert_time > 900: 
                     send_alert(f"⚠️ DANGER: You are {elapsed_hours:.1f}h over your limit! Close social media now.")
-                    last_alert_time = time.time()
+                    last_alert_time = current_time
         
         time.sleep(60) # Poll every minute
 

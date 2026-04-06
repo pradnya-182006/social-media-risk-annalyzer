@@ -332,9 +332,10 @@ with st.sidebar:
         <p style='font-size:0.62rem;color:#9aa0bc;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;padding-left:4px;'>Navigation</p>
     """, unsafe_allow_html=True)
 
-    menu = st.radio("", PAGES,
+    menu = st.radio("Navigation", PAGES,
         index=PAGES.index(st.session_state.menu),
         format_func=lambda x: f"{ICONS[PAGES.index(x)]}  {x}",
+        label_visibility="collapsed"
     )
     st.session_state.menu = menu
 
@@ -347,10 +348,7 @@ with st.sidebar:
         avg_risk, total_assessments, avg_usage = 72, 1284, 6.4
 
     st.markdown("<hr>", unsafe_allow_html=True)
-    st.markdown("""
-        <p style='font-size:0.62rem;color:#9aa0bc;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;padding-left:4px;'>Quick Stats</p>
-        <div style='display:flex;flex-direction:column;gap:7px;'>
-    """ + "".join([f"""
+    stats_html = "".join([f"""
         <div style='background:rgba(255,255,255,0.6);border-radius:12px;padding:0.65rem 1rem;
                     box-shadow:0 4px 10px rgba(110,100,160,0.05);border:1px solid rgba(255,255,255,0.8);
                     display:flex;justify-content:space-between;align-items:center;'>
@@ -360,7 +358,14 @@ with st.sidebar:
             ("Avg Risk Score",f"{avg_risk}%","#ee5e76"),
             ("Assessments",f"{total_assessments:,}","#604e9c"),
             ("Model Accuracy","99.1%","#2bb996"),
-        ]]) + "</div>", unsafe_allow_html=True)
+        ]])
+    
+    st.markdown(f"""
+        <p style='font-size:0.62rem;color:#9aa0bc;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;padding-left:4px;'>Quick Stats</p>
+        <div style='display:flex;flex-direction:column;gap:7px;'>
+            {stats_html}
+        </div>
+    """, unsafe_allow_html=True)
 
 
 # ── HOME ─────────────────────────────────────
@@ -548,17 +553,19 @@ elif menu == "Psychological Assessment":
             fig.update_layout(**NM, height=280)
             st.plotly_chart(fig, use_container_width=True)
 
-        with r2:
-            st.markdown(f"""
-                <div class='nm-card' style='height:100%;'>
-                    <span class='sec-label'>Cure</span>
-                    {''.join([f"""<div style='display:flex;align-items:flex-start;gap:12px;
+        cure_html = ''.join([f"""<div style='display:flex;align-items:flex-start;gap:12px;
                         padding:0.7rem 1rem;border-radius:14px;margin-bottom:10px;
                         background:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.6);
                         box-shadow:0 4px 12px rgba(110,100,160,0.03);'>
                         <span style='color:{color};font-size:1rem;margin-top:1px;flex-shrink:0;font-weight:900;'>✓</span>
                         <span style='color:#4b3e7c;font-size:0.88rem;line-height:1.5;font-weight:600;'>{c}</span>
-                    </div>""" for c in cures])}
+                    </div>""" for c in cures])
+        
+        with r2:
+            st.markdown(f"""
+                <div class='nm-card' style='height:100%;'>
+                    <span class='sec-label'>Cure</span>
+                    {cure_html}
                 </div>
             """, unsafe_allow_html=True)
 
@@ -609,23 +616,22 @@ elif menu == "Dataset Insights":
                 fig2.update_traces(marker_line_width=0,width=0.45)
                 
                 # Render using 60fps CSS injected HTML
-                html_str = fig2.to_html(include_plotlyjs="require", full_html=False)
-                animated_html = f"""
+                html_str = fig2.to_html(include_plotlyjs="cdn", full_html=False)
+                animated_html = """
                 <style>
-                @keyframes barGrow {{
-                    from {{ transform: scaleY(0); opacity: 0; }}
-                    to {{ transform: scaleY(1); opacity: 1; }}
-                }}
+                @keyframes barGrow {
+                    from { transform: scaleY(0); opacity: 0; }
+                    to { transform: scaleY(1); opacity: 1; }
+                }
                 .js-plotly-plot .cartesianlayer .trace.bars path,
-                .js-plotly-plot .cartesianlayer .trace.bars rect {{
+                .js-plotly-plot .cartesianlayer .trace.bars rect {
                     transform-box: fill-box !important;
                     transform-origin: bottom !important;
                     animation: barGrow 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
-                }}
-                body {{ background: transparent !important; margin: 0; overflow: hidden; }}
+                }
+                body { background: transparent !important; margin: 0; overflow: hidden; }
                 </style>
-                {html_str}
-                """
+                """ + html_str
                 import streamlit.components.v1 as components
                 components.html(animated_html, height=380)
                     
@@ -639,22 +645,21 @@ elif menu == "Dataset Insights":
                 fig3.update_layout(**NM,height=340,showlegend=True,
                     legend=dict(font=dict(color='#475569',family='Nunito')))
                 
-                html_str = fig3.to_html(include_plotlyjs="require", full_html=False)
-                animated_html = f"""
+                html_str = fig3.to_html(include_plotlyjs="cdn", full_html=False)
+                animated_html = """
                 <style>
-                @keyframes pieReveal {{
-                    from {{ transform: scale(0.6) rotate(-45deg); opacity: 0; }}
-                    to {{ transform: scale(1) rotate(0deg); opacity: 1; }}
-                }}
-                .js-plotly-plot path.surface {{
+                @keyframes pieReveal {
+                    from { transform: scale(0.6) rotate(-45deg); opacity: 0; }
+                    to { transform: scale(1) rotate(0deg); opacity: 1; }
+                }
+                .js-plotly-plot path.surface {
                     transform-box: fill-box !important;
                     transform-origin: center !important;
                     animation: pieReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
-                }}
-                body {{ background: transparent !important; margin: 0; overflow: hidden; }}
+                }
+                body { background: transparent !important; margin: 0; overflow: hidden; }
                 </style>
-                {html_str}
-                """
+                """ + html_str
                 import streamlit.components.v1 as components
                 components.html(animated_html, height=360)
     except Exception as e:
@@ -673,33 +678,44 @@ elif menu == "Screen Time Controller":
     """, unsafe_allow_html=True)
 
     CONFIG_PATH = os.path.join(BASE_DIR, 'screen_config.json')
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    current_ts = datetime.now().timestamp()
+    
+    config = {}
     if os.path.exists(CONFIG_PATH):
-        with open(CONFIG_PATH,'r') as f: config = json.load(f)
-    else:
-        config = {"limit":4.0,"status":"active","start_time":datetime.now().timestamp()}
+        try:
+            with open(CONFIG_PATH,'r') as f: config = json.load(f)
+        except:
+            pass
+
+    if not config or config.get("date") != current_date:
+        config.update({"limit":4.0,"status":"inactive","date":current_date,"elapsed_time":0.0,"last_update_time":current_ts})
+        with open(CONFIG_PATH,'w') as f: json.dump(config,f)
 
     ca,cb = st.columns([1,1], gap="large")
     with ca:
         st.markdown("<div class='nm-card'>", unsafe_allow_html=True)
         st.markdown("<span class='sec-label'>Guard Configuration</span>", unsafe_allow_html=True)
-        new_limit = st.number_input("Daily Screen Limit (Hours)", 0.5, 12.0, float(config["limit"]), 0.5)
+        new_limit = st.number_input("Daily Screen Limit (Hours)", 0.5, 12.0, float(config.get("limit", 4.0)), 0.5)
         st.markdown("<br>", unsafe_allow_html=True)
         if st.button("⟶  Activate Real-Time Guard", key="act"):
             config["limit"]=new_limit; config["status"]="active"
+            config["last_update_time"]=current_ts
             with open(CONFIG_PATH,'w') as f: json.dump(config,f)
             try: subprocess.Popen(["python", os.path.join(BASE_DIR, "background_monitor.py")],
                     creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
             except: pass
             st.success("✓ AI Guard is now active in the background!")
         if st.button("↺  Reset Timer", key="rst"):
-            config["start_time"]=datetime.now().timestamp()
+            config["elapsed_time"]=0.0
+            config["last_update_time"]=current_ts
             with open(CONFIG_PATH,'w') as f: json.dump(config,f)
             st.rerun()
         st.markdown("</div>", unsafe_allow_html=True)
         st.markdown("<div class='nm-inset' style='margin-top:0;'><p style='color:#9aa0bc;font-size:0.79rem;margin:0;'>💡 Once activated, the Guard works outside the browser. You don't need to keep this tab open.</p></div>", unsafe_allow_html=True)
 
     with cb:
-        elapsed      = (datetime.now().timestamp()-config["start_time"])/3600
+        elapsed      = config.get("elapsed_time", 0.0) / 3600.0
         progress_pct = min(1.0,elapsed/new_limit) if new_limit>0 else 1.0
         bar_color    = "#2bb996" if progress_pct<0.6 else "#e9a147" if progress_pct<0.9 else "#ee5e76"
         remaining    = max(0,new_limit-elapsed)

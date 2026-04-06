@@ -14,7 +14,7 @@ def get_config():
                 return json.load(f)
         except:
             pass
-    return {"limit": 240, "status": "active", "date": datetime.now().strftime("%Y-%m-%d"), "elapsed_time": 0.0, "last_update_time": time.time()}
+    return {"limit": 4.0, "status": "active", "date": datetime.now().strftime("%Y-%m-%d"), "elapsed_time": 0.0, "last_update_time": time.time()}
 
 def save_config(config):
     with open(CONFIG_FILE, 'w') as f:
@@ -59,9 +59,9 @@ def monitor():
             save_config(config)
             
             elapsed_minutes = config.get("elapsed_time", 0.0) / 60.0
-            limit = config.get("limit", 240)
+            limit_m = float(config.get("limit", 4.0)) * 60.0
             
-            if elapsed_minutes > limit:
+            if elapsed_minutes > limit_m:
                 # Alert every 15 minutes if over limit
                 if current_time - last_alert_time > 900: 
                     send_alert(f"⚠️ DANGER: You are {elapsed_minutes:.1f}m over your limit! Close social media now.")

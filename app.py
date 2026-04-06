@@ -696,7 +696,7 @@ elif menu == "Screen Time Controller":
     with ca:
         st.markdown("<div class='nm-card'>", unsafe_allow_html=True)
         st.markdown("<span class='sec-label'>Guard Configuration</span>", unsafe_allow_html=True)
-        new_limit = st.number_input("Daily Screen Limit (Hours)", 0.5, 12.0, float(config.get("limit", 4.0)), 0.5)
+        new_limit = st.number_input("Daily Screen Limit (Minutes)", 1, 1440, int(config.get("limit", 240)), 5)
         st.markdown("<br>", unsafe_allow_html=True)
         if st.button("⟶  Activate Real-Time Guard", key="act"):
             config["limit"]=new_limit; config["status"]="active"
@@ -715,13 +715,13 @@ elif menu == "Screen Time Controller":
         st.markdown("<div class='nm-inset' style='margin-top:0;'><p style='color:#9aa0bc;font-size:0.79rem;margin:0;'>💡 Once activated, the Guard works outside the browser. You don't need to keep this tab open.</p></div>", unsafe_allow_html=True)
 
     with cb:
-        elapsed      = config.get("elapsed_time", 0.0) / 3600.0
+        elapsed      = config.get("elapsed_time", 0.0) / 60.0
         progress_pct = min(1.0,elapsed/new_limit) if new_limit>0 else 1.0
         bar_color    = "#2bb996" if progress_pct<0.6 else "#e9a147" if progress_pct<0.9 else "#ee5e76"
         remaining    = max(0,new_limit-elapsed)
         fig_g = go.Figure(go.Indicator(mode="gauge+number+delta",value=round(elapsed,2),
-            delta={'reference':new_limit,'suffix':'h limit','font':{'color':'#9aa0bc','size':12}},
-            number={'suffix':"h",'font':{'color':bar_color,'family':'DM Mono','size':34}},
+            delta={'reference':new_limit,'suffix':'m limit','font':{'color':'#9aa0bc','size':12}},
+            number={'suffix':"m",'font':{'color':bar_color,'family':'DM Mono','size':34}},
             title={'text':"Session Time",'font':{'color':'#9aa0bc','size':12}},
             gauge={'axis':{'range':[0,new_limit],'tickcolor':'#9aa0bc','tickfont':{'color':'#9aa0bc','size':10}},
                    'bar':{'color':bar_color,'thickness':0.26},'bgcolor':'rgba(0,0,0,0)','borderwidth':0,
@@ -734,10 +734,10 @@ elif menu == "Screen Time Controller":
 
     st.progress(progress_pct, text=f"{int(progress_pct*100)}% of daily limit consumed")
     m1,m2,m3 = st.columns(3,gap="medium")
-    with m1: st.metric("Session Duration",f"{elapsed:.2f}h",
-                delta=f"{remaining:.2f}h left" if elapsed<new_limit else "Limit reached!",
+    with m1: st.metric("Session Duration",f"{elapsed:.1f}m",
+                delta=f"{remaining:.1f}m left" if elapsed<new_limit else "Limit reached!",
                 delta_color="normal" if elapsed<new_limit else "inverse")
-    with m2: st.metric("Daily Limit",f"{new_limit}h",delta="Guard Active" if config.get('status')=='active' else "Inactive")
+    with m2: st.metric("Daily Limit",f"{new_limit}m",delta="Guard Active" if config.get('status')=='active' else "Inactive")
     with m3:
         pct=int(progress_pct*100)
         st.metric("Usage %",f"{pct}%",delta=f"{100-pct}% safe zone" if pct<100 else "Exceeded!")
@@ -751,8 +751,8 @@ elif menu == "Screen Time Controller":
                 <div>
                     <p style='color:#ee5e76;font-weight:800;font-size:0.95rem;margin:0;'>Daily Limit Exceeded</p>
                     <p style='color:#6a6287;font-size:0.82rem;margin:2px 0 0;'>
-                    Used <strong style='color:#ee5e76;'>{elapsed:.2f}h</strong> —
-                    {elapsed-new_limit:.2f}h over your {new_limit}h limit. Guard is active.
+                    Used <strong style='color:#ee5e76;'>{elapsed:.1f}m</strong> —
+                    {elapsed-new_limit:.1f}m over your {new_limit}m limit. Guard is active.
                     </p>
                 </div>
             </div>

@@ -1,7 +1,11 @@
 import time
 import json
 import os
-from plyer import notification
+try:
+    from plyer import notification
+    HAS_PLYER = True
+except ImportError:
+    HAS_PLYER = False
 
 CONFIG_FILE = 'screen_config.json'
 
@@ -21,15 +25,18 @@ def save_config(config):
         json.dump(config, f)
 
 def send_alert(message):
-    try:
-        notification.notify(
-            title='🚀 MindBalance: Screen Time Alert',
-            message=message,
-            app_name='MindBalance AI',
-            timeout=10
-        )
-    except:
-        print(f"Alert: {message}")
+    if HAS_PLYER:
+        try:
+            notification.notify(
+                title='🚀 MindBalance: Screen Time Alert',
+                message=message,
+                app_name='MindBalance AI',
+                timeout=10
+            )
+            return
+        except:
+            pass
+    print(f"Alert: {message}")
 
 def monitor():
     print("MindBalance Monitor Started in Background...")

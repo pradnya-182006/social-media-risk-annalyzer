@@ -688,6 +688,20 @@ elif menu == "Screen Time Controller":
         except:
             pass
 
+    # ── Backward-compatible key migration (old → new) ─────
+    if "limit" in config and "limit_hours" not in config:
+        config["limit_hours"] = config.pop("limit")
+    if "elapsed_time" in config and "elapsed_secs" not in config:
+        config["elapsed_secs"] = config.pop("elapsed_time")
+    if "last_update_time" in config and "last_update" not in config:
+        config["last_update"] = config.pop("last_update_time")
+    if "start_time" in config:
+        config.pop("start_time", None)  # no longer needed
+    if "alert_sent" not in config:
+        config["alert_sent"] = {}
+    if "history" not in config:
+        config["history"] = {}
+
     # Auto-reset on new day (matches background_monitor logic)
     if not config or config.get("date") != current_date:
         # Archive yesterday before reset
@@ -808,8 +822,9 @@ elif menu == "Screen Time Controller":
     # ── Alert thresholds status ───────────────────
     alert_sent = config.get("alert_sent", {})
     thresholds = {"50%": 0.50, "75%": 0.75, "90%": 0.90, "100%": 1.00}
-    threshold_html_items = []
-    for label, frac in thresholds.items():
+    st.markdown("<div class='nm-card' style='margin-top:1rem;'><span class='sec-label'>Alert Thresholds</span></div>", unsafe_allow_html=True)
+    th_cols = st.columns(4, gap="small")
+    for i, (label, frac) in enumerate(thresholds.items()):
         reached = progress_pct >= frac
         alerted = label in alert_sent
         if reached and alerted:
@@ -818,23 +833,16 @@ elif menu == "Screen Time Controller":
             icon, clr, status_txt = "⚠️", "#e9a147", "Reached"
         else:
             icon, clr, status_txt = "✓", "#2bb996", "Safe"
-        threshold_html_items.append(f"""
-            <div style='display:flex;align-items:center;gap:10px;padding:0.5rem 0.8rem;
-                        background:rgba(255,255,255,0.4);border-radius:10px;border:1px solid rgba(255,255,255,0.7);'>
-                <span style='font-size:1rem;'>{icon}</span>
-                <span style='font-weight:700;color:#4b3e7c;font-size:0.82rem;flex:1;'>{label} Threshold</span>
-                <span style='font-size:0.72rem;font-weight:700;color:{clr};background:rgba(255,255,255,0.7);
-                             padding:3px 10px;border-radius:20px;'>{status_txt}</span>
-            </div>
-        """)
-    st.markdown(f"""
-        <div class='nm-card' style='margin-top:1rem;'>
-            <span class='sec-label'>Alert Thresholds</span>
-            <div style='display:grid;grid-template-columns:1fr 1fr;gap:8px;'>
-                {"".join(threshold_html_items)}
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
+        with th_cols[i]:
+            st.markdown(f"""
+                <div style='display:flex;align-items:center;gap:10px;padding:0.5rem 0.8rem;
+                            background:rgba(255,255,255,0.4);border-radius:10px;border:1px solid rgba(255,255,255,0.7);'>
+                    <span style='font-size:1rem;'>{icon}</span>
+                    <span style='font-weight:700;color:#4b3e7c;font-size:0.82rem;flex:1;'>{label} Threshold</span>
+                    <span style='font-size:0.72rem;font-weight:700;color:{clr};background:rgba(255,255,255,0.7);
+                                 padding:3px 10px;border-radius:20px;'>{status_txt}</span>
+                </div>
+            """, unsafe_allow_html=True)
 
     # ── Limit exceeded warning ────────────────────
     if elapsed>limit_m:
